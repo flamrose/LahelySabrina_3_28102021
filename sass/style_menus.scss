@@ -197,20 +197,6 @@ li{
   margin-bottom: 20px;
   animation: defile 1.2s linear both;
 }
-@keyframes defile {
-  0% {
-      color: white;
-      text-shadow: 0 0 7px white;
-  }
-  90% {
-      color: #484848;
-      text-shadow: none;
-  }
-  100% {
-      color: #fff900;
-      text-shadow: 0 0 7px #fff900;
-  }
-}
 
 .li__defile:nth-child(1){
   animation-delay: 0.1s;
