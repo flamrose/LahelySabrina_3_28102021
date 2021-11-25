@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <!--encodage et caractères spéciaux-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!--Identité graphique, Police ROBOTO et police Shrikhand via Google font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Shrikhand&display=swap"
+        rel="stylesheet">
+
+    <!--Communique avec le fichier css-->
+    <link rel="stylesheet" href="styles/style_index.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+    </style>
+    <!--Police ROBOTO importée-->
+    <title>Ohmyfood</title>
+    <!--moins de 100 caractères-->
+</head>
+
+<!--<div class="accueil">Ohmyfood</div>-->
+
+<body>
+    <h2 class="accueil">OHMYFOOD</h2>
+    <aside class="section">
+        <span class="loader loader-quart"></span>
+    </aside>
+
+    <!--HEADER-->
+    <header class="header">
+        <img class="header__logo" src="SRC/images/logo/ohmyfood.png" alt="logo ohmyfood" />
+    </header>
+    <main>
+        <!--NAVIGATION DE LOCALISATION -->
+        <nav class="nav">
+            <div>
+                <i class="fas fa-map-marker-alt icon--map"></i>
+            </div>
+            <div>
+                <input class="nav__input" type="search" value="Paris, Belleville" />
+            </div>
+        </nav>
+        <!--1ère section CALL TO ACTION -->
+        <section class="call-action">
+
+            <h1>Réservez le menu qui
+                vous convient</h1>
+
+            <p>Découvrez des restaurants d'exception,
+                sélectionnés par nos soins.</p>
+
+            <button class="btn__submit" type="submit">Explorez nos restaurants</button>
+        </section>
+
+        <!--2ème section  Filters : fonctionnement-->
+        <section class="filters-section">
+            <h2> Fonctionnement</h2>
+
+            <ul class="filters-ul">
+                <li class="filters__li">
+                    <div class="filters__num"> 1</div><i class="fas fa-mobile-alt icon--filters"></i> Choisissez un
+                    restaurant
+                </li>
+                <li class="filters__li">
+                    <div class="filters__num"> 2</div><i class="fas fa-list-ul icon--filters"></i> Composez votre menu
+                </li>
+                <li class="filters__li">
+                    <div class="filters__num"> 3</div><i class="fas fa-store icon--filters"></i> Dégustez au restaurant
+                </li>
+            </ul>
+        </section>
+
+        <!--3ème section : Restaurants-->
+        <section class="resto-list">
+            <h2 class="resto__h2">Restaurants</h2>
+
+            <article class="resto-card marg--right">
+                <a class="img__link" href="../sabrina_projet3/pages_menus/La-palette-du-goût.html"><span
+                        class="card--new">Nouveau</span>
+                    <div><img class="card__img"
+                            src="SRC/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash_small.jpg"
+                            alt="La palette du goût" /></div>
+                    <div>
+                        <h3 class="card__h3">La palette du goût </h3>
+                        <h4 class="card__h4">Ménilmontant</h4>
+                    </div>
+                    <div>
+                        <i class="far fa-heart btn__heart"></i>
+                        <i class="fas fa-heart btn__heart--bis"></i>
+                        
+                    </div>
+                </a>
+            </article>
+
+            <article class="resto-card">
+                <a class="img__link" href="../sabrina_projet3/pages_menus/La-note-enchantée.html"><span
+                        class="card--new">Nouveau</span>
+                    <div><img class="card__img--modif" src="SRC/images/restaurants/stil-u2Lp8tXIcjw-unsplash_small.jpg"
+                            alt="La note enchantée" /></div>
+                    <div>
+                        <h3 class="card__h3">La note enchantée</h3>
+                        <h4 class="card__h4">Charonne</h4>
+                    </div>
+                    <i class="far fa-heart btn__heart btn__heart"></i>
+                </a>
+            </article>
+
+            <article class="resto-card card--3 marg--right">
+                <a class="img__link" href="../sabrina_projet3/pages_menus/a-la-française.html">
+                    <div><img class="card__img" src="SRC/images/restaurants/toa-heftiba-dqkertsqwi0-unsplash_small.jpg"
+                            alt="A la française" /></div>
+                    <div>
+                        <h3 class="card__h3">A la française</h3>
+                        <h4 class="card__h4">Cité rouge</h4>
+                    </div>
+                    <i class="far fa-heart btn__heart btn__heart"></i>
+                </a>
+            </article>
+
+            <article class="resto-card">
+                <a class="img__link" href="../sabrina_projet3/pages_menus/Le-délice-des-sens.html">
+                    <div><img class="card__img" src="SRC/images/restaurants/louis-hansel-shotsoflouis_small.jpg"
+                            alt="Le délice des sens" /></div>
+                    <div>
+                        <h3 class="card__h3">Le délice des sens</h3>
+                        <h4 class="card__h4">Folie-Méricourt</h4>
+                    </div>
+                    <i class="far fa-heart btn__heart btn__heart"></i>
+                </a>
+            </article>
+
+        </section>
+
+        <footer>
+            <h3 class="footer__h3">ohmyfood</h3>
+            <div class="footer-flex">
+                <h4 class="footer__h4"><i class="fas fa-utensils footer__icon"></i> Proposer un restaurant</h4>
+                <h4 class="footer__h4"><i class="fas fa-hands-helping footer__icon"></i> Devenir partenaire</h4>
+                <h4 class="footer__h4">Mentions légales</h4>
+                <h4 class="footer__h4"><a class="footer__link--white" href="Contact@gmail.com">Contact</a></h4>
+            </div>
+        </footer>
+
+
+    </main>
+
+</body>
