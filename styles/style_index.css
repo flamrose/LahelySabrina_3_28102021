@@ -11,7 +11,7 @@
   display: block;
 }
 
-/*CERCLE CHARGEMENT*/
+/*CERCLE = CHARGEMENT*/
 /*loader circle-spin*/
 aside {
   height: 500px;
@@ -127,10 +127,6 @@ nav .nav__input {
   transform: translate(250px, -40px);
 }
 
-.btn__heart--bis {
-  opacity: 0.3;
-}
-
 .animation {
   animation: slideleft 1s linear both;
 }
@@ -145,16 +141,6 @@ nav .nav__input {
     opacity: 1;
   }
 }
-btn__heart--bis::after {
-  content: "";
-  color: #9356DC;
-  font-size: xx-large;
-  overflow: hidden;
-  z-index: -1;
-  /* pour qu'il se mette en dessous */
-  transition: all 0.6s ease;
-}
-
 /*CALL TO ACTION*/
 .call-action {
   width: 100%;
