@@ -144,6 +144,7 @@ body {
   opacity: 0;
   transition: opacity 0.4s ease;
 }
+/*ANIMATION FLASH*/
 .lettre {
   color: #484848;
   font-size: 80px;

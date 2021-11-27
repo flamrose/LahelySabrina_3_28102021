@@ -2,7 +2,7 @@
   font-family: "Roboto", sans-serif, "Shrikhand", cursive;
   src: url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Shrikhand&display=swap");
 }
-/*CHARGEMENT LOADER APPEARY*/
+/*CHARGEMENT LOADER SPIN*/
 /**, ::before, ::after {
   box-sizing: border-box;
   margin: 0;
@@ -10,7 +10,7 @@
   display: block;
 }
 
-/*APPEARY*/
+/*CERCLE CHARGEMENT*/
 .accueil {
   width: 100%;
   height: 100%;
@@ -22,6 +22,16 @@
   display: flex;
   position: absolute;
   animation: appeary 3s ease-in-out;
+}
+
+/*LOADER*/
+.loader {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes appeary {
@@ -81,6 +91,7 @@
   transition: opacity 0.4s ease-out;
 }
 
+/*GENERALITE*/
 * {
   box-sizing: border-box;
 }
@@ -91,17 +102,7 @@ body {
 }
 
 /* VARIABLES */
-/*LOADER*/
-.loader {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/*HEADER LOGO*/
+/*HEADER ET LOGO*/
 header {
   width: 100%;
   height: auto;
@@ -135,7 +136,7 @@ nav .nav__input {
   margin: 10px 10px 10px 40px;
 }
 
-/*BOUTONS/ LEGENDE/NUMEROS/ICONES*/
+/*BOUTONS*/
 .btn__submit {
   font-size: 20px;
   font-weight: 500;
@@ -242,7 +243,7 @@ p {
   padding: 7px 12px;
   background: #9356DC;
   color: white;
-  transform: translate(-5px);
+  transform: translate(-25px);
 }
 
 /*SECTION LISTE DES RESTAURANTS*/
@@ -335,13 +336,18 @@ footer {
 }
 
 @media screen and (min-width: 500px) {
-  /*SECTION FILTERS*/
+  /*CALL TO ACTION*/
+  .btn__submit {
+    margin-left: 20%;
+  }
+
+  /*SECTION FILTERS : FONCTIONNEMENT*/
   .filters__num {
     border-radius: 15px;
     padding: 7px 12px;
     background: #9356DC;
     color: white;
-    transform: translate(-30px);
+    transform: translate(-50px);
   }
 
   /*SECTION LISTE DES RESTAURANTS*/
@@ -416,7 +422,7 @@ footer {
   }
 }
 @media screen and (min-width: 600px) {
-  /*HEADER? LOGO*/
+  /*HEADER ET LOGO*/
   header {
     width: 100%;
     height: auto;
@@ -446,17 +452,16 @@ footer {
 
   /* SECTION FILTERS : FONCTIONNEMENT*/
   .filters-section {
-    padding: 30px 20px;
+    padding: 0px 20px;
+    padding-bottom: 30px;
   }
 
   .filters-ul {
     list-style: none;
-    display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 25px;
-    padding-inline-start: 40px;
+    padding-inline-start: 0px;
   }
   .filters-ul .filters__li {
     display: flex;
@@ -478,10 +483,10 @@ footer {
     padding: 7px 12px;
     background: #9356DC;
     color: white;
-    transform: translate(15px);
+    transform: translate(-60px);
   }
 
-  /*SECTION RESTAURANTS*/
+  /*SECTION LISTE DES RESTAURANTS*/
   .card__img {
     width: 100%;
     height: 200px;
@@ -518,10 +523,30 @@ footer {
   }
 
   .footer__icon {
-    margin-right: 0px;
+    margin-right: 5px;
+  }
+}
+@media screen and (min-width: 700px) {
+  /*CALL TO ACTION*/
+  h1 {
+    margin-block-start: 0;
+  }
+
+  .filters__num {
+    transform: translate(-95px);
   }
 }
 @media screen and (min-width: 750px) {
+  /*SECTION FILTERS : FONCTIONNEMENT*/
+  .filters__num {
+    border-radius: 15px;
+    padding: 7px 12px;
+    background: #9356DC;
+    color: white;
+    transform: translate(-90px);
+  }
+
+  /*SECTION LISTE DES RESTAURANTS*/
   .resto-list {
     width: 100%;
     height: auto;
@@ -614,13 +639,17 @@ footer {
     margin-block-start: 0;
     margin-left: 10px;
   }
+
+  .footer__icon {
+    margin-right: 5px;
+  }
 }
 @media screen and (min-width: 800px) {
   body {
     margin: 0;
   }
 
-  /*HEADER LOGO*/
+  /*HEADER ET LOGO*/
   header {
     width: 100%;
     height: auto;
@@ -630,6 +659,11 @@ footer {
 
   .header__logo {
     width: 30%;
+  }
+
+  /*CALL TO ACTION*/
+  h1 {
+    margin-block-start: 0;
   }
 
   /* SECTION FILTERS : FONCTIONNEMENT*/
@@ -668,7 +702,11 @@ footer {
     padding: 7px 12px;
     background: #9356DC;
     color: white;
-    transform: translate(10px);
+    transform: translate(-30px);
+  }
+
+  .icon--filters {
+    margin-right: 5px;
   }
 
   /* LISTE DES RESTAURANTS*/
@@ -683,18 +721,19 @@ footer {
     background-color: whitesmoke;
     display: flex;
     flex-direction: row;
+    padding-bottom: 20px;
   }
 
   .resto-card {
     width: 30%;
-    height: 240px;
+    height: 220px;
     border: 1px solid #f6f6f6;
     border-radius: 15px;
     box-shadow: 0 0 10px #d4d4d4;
     background-color: white;
     margin: 10px;
-    position: relative;
     margin-top: 0px;
+    position: relative;
   }
 
   .card--new {
@@ -779,12 +818,36 @@ footer {
     margin-block-end: 0;
     margin-block-start: 0px;
   }
+
+  .footer__icon {
+    margin-right: 5px;
+  }
 }
 @media screen and (min-width: 900px) {
+  /*CALL TO ACTION*/
+  .btn__submit {
+    margin-left: 35%;
+  }
+
+  /*SECTION FILTERS : FONCTIONNEMENT*/
+  .filters__num {
+    border-radius: 15px;
+    padding: 7px 12px;
+    background: #9356DC;
+    color: white;
+    transform: translate(-30px);
+  }
+
+  .icon--filters {
+    margin-right: 50px;
+  }
+
+  /*SECTION LISTE DES RESTAURANTS*/
   .resto-list {
     width: 100%;
     height: auto;
-    padding: 20px 20px;
+    padding-top: 20px;
+    padding-bottom: 50px;
     background-color: whitesmoke;
     display: flex;
   }
@@ -797,14 +860,14 @@ footer {
 
   .resto-card {
     width: 30%;
-    height: auto;
+    height: 250px;
     border: 1px solid #f6f6f6;
     border-radius: 15px;
     box-shadow: 0 0 10px #d4d4d4;
     background-color: white;
     margin: 10px;
     position: relative;
-    margin-top: 70px;
+    margin-top: 0px;
   }
 
   .card--new {
@@ -824,14 +887,14 @@ footer {
 
   .card__img {
     width: 100%;
-    height: 40%;
+    height: 150px;
     border-radius: 15px 15px 0 0;
     position: static;
   }
 
   .card__img--modif {
     width: 100%;
-    height: 186px;
+    height: 150px;
     border-radius: 15px 15px 0 0;
   }
 
@@ -874,10 +937,11 @@ footer {
   }
 
   .footer__icon {
-    margin-right: 0px;
+    margin-right: 5px;
   }
 }
 @media screen and (min-width: 1000px) {
+  /*NAVIGATION DE RECHERCHE*/
   nav {
     border-bottom: #d4d4d4 solid 2px;
   }
@@ -1000,6 +1064,10 @@ footer {
     margin-block-start: 0;
     margin-block-end: 0;
   }
+
+  .footer__icon {
+    margin-right: 5px;
+  }
 }
 @media screen and (min-width: 1200px) {
   body {
@@ -1009,7 +1077,7 @@ footer {
     margin-right: 0px;
   }
 
-  /*HEADER? LOGO*/
+  /*HEADER ET LOGO*/
   header {
     width: 100%;
     height: auto;
@@ -1023,6 +1091,7 @@ footer {
     width: 20%;
   }
 
+  /*CALL TO ACTION*/
   .call-action {
     width: 100%;
     height: auto;
@@ -1047,7 +1116,12 @@ footer {
     margin-block-end: 0;
   }
 
-  /*SECTION RESTAURANTS*/
+  /*SECTION FILTERS : FONCTIONNEMENT*/
+  .icon--filters {
+    margin-right: 100px;
+  }
+
+  /*SECTION LISTE DES RESTAURANTS*/
   .resto__h2 {
     align-self: flex-start;
     margin-block-start: 0;
@@ -1067,6 +1141,8 @@ footer {
   }
   .resto-card:hover {
     transform: scaleZ(1.15);
+    box-shadow: 0 0 0 4px #d4d4d4;
+    z-index: 2;
   }
 
   .card__img {
@@ -1118,6 +1194,10 @@ footer {
     padding-left: 20px;
     margin-block-end: 0;
     margin-block-start: 40px;
+  }
+
+  .footer__icon {
+    margin-right: 5px;
   }
 }
 
