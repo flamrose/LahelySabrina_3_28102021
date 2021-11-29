@@ -10,7 +10,7 @@
 
   display: block;
 }
-
+/* VARIABLES */
 /*CERCLE = CHARGEMENT*/
 /*loader circle-spin*/
 aside {
@@ -68,7 +68,6 @@ body {
   margin: 0;
 }
 
-/* VARIABLES */
 /*HEADER ET LOGO*/
 header {
   width: 100%;
@@ -182,7 +181,7 @@ p {
   width: 90%;
   height: 50px;
   background-color: #f6f6f6;
-  box-shadow: 4 px 4px 8px #e5e5e5;
+  box-shadow: 4px 4px 8px #e5e5e5;
   border-radius: 10px;
 }
 .filters-ul .filters__li:hover {
@@ -423,7 +422,7 @@ footer {
     width: 90%;
     height: 50px;
     background-color: #f6f6f6;
-    box-shadow: 4 px 4px 8px #e5e5e5;
+    box-shadow: 4px 4px 8px #e5e5e5;
     border-radius: 10px;
     cursor: pointer;
   }
@@ -640,7 +639,7 @@ footer {
     width: fit-content;
     height: 50px;
     background-color: #f6f6f6;
-    box-shadow: 4 px 4px 8px #e5e5e5;
+    box-shadow: 4px 4px 8px #e5e5e5;
     border-radius: 10px;
     cursor: pointer;
     margin-right: 0px;

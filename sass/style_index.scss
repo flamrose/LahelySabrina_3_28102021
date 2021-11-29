@@ -10,6 +10,11 @@
  
   display: block;
 }
+/* VARIABLES */
+$mauve:#9356DC;
+$white:white;
+
+$padding:10px;
 
 /*CERCLE = CHARGEMENT*/
 
@@ -18,7 +23,7 @@
 aside{
   height: 500px;
   line-height: 500px;
-  background-color: white;
+  background-color:$white;
 }
 .loader{
   width: 50px;
@@ -40,8 +45,8 @@ aside{
   right: -6px;
   border: 6px solid transparent;
   border-radius: 50px;
-  border-top-color: #9356DC;
-  border-bottom-color: #9356DC;
+  border-top-color: $mauve;
+  border-bottom-color:$mauve;
   animation:spin 1s linear 0s  infinite;
 }
 @keyframes spin{
@@ -57,17 +62,12 @@ body{
   display: block;
   margin:0;
 }
-/* VARIABLES */
-$mauve:#9356DC;
-$white:white;
-
-$padding:10px;
 
 /*HEADER ET LOGO*/
 header{
   width: 100%;
   height: auto;
-  padding: 10px 0;
+  padding: $padding 0;
   text-align:center;
 
   .header__logo{
@@ -93,7 +93,7 @@ nav{
   }
 }
 .icon--map{
-  margin: 10px 10px 10px 40px;
+  margin: $padding $padding $padding 40px;
 }
 /*BOUTONS*/
 .btn__submit{
@@ -139,7 +139,7 @@ animation: slideleft 1s linear both;
   opacity: 0.8;
   cursor: pointer;
   transition: .3s;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.6);    
+  box-shadow: 0px 0px $padding 0px rgba(0,0,0,0.6);    
 }
 
 /*CALL TO ACTION*/
@@ -179,8 +179,8 @@ animation: slideleft 1s linear both;
       width: 90%;
       height: 50px;
       background-color: #f6f6f6;
-      box-shadow: 4 px 4px 8px #e5e5e5;
-      border-radius: 10px;
+      box-shadow: 4px 4px 8px #e5e5e5;
+      border-radius: $padding;
       &:hover{
       cursor: pointer;  
       background: lighten($mauve, 20);
@@ -207,7 +207,7 @@ animation: slideleft 1s linear both;
     height: auto;
     border: 1px solid #f6f6f6;
     border-radius: 15px;
-    box-shadow: 0 0 10px #d4d4d4;
+    box-shadow: 0 0 $padding #d4d4d4;
     background-color: $white;
     margin-bottom: 20px;
   }
@@ -237,15 +237,15 @@ animation: slideleft 1s linear both;
   .card__h3 {
     margin-block-end:0 ;
     margin-block-start:0 ;
-    padding-top: 10px;
+    padding-top: $padding;
     padding-bottom: 5px;
-    padding-left: 10px;
+    padding-left: $padding;
   }
   .card__h4{
    margin-block-end:0 ;
     margin-block-start:0 ;
     padding-bottom: 0px;
-    padding-left: 10px;
+    padding-left: $padding;
   }
 .card__h5{
   margin-block-start: 0;
@@ -281,8 +281,8 @@ footer {
   .filters__num{
     border-radius: 15px;
     padding: 7px 12px;
-    background: #9356DC;
-    color: white;
+    background: $mauve;
+    color:$white;
     transform: translate(-50px);
   }
  /*SECTION LISTE DES RESTAURANTS*/
@@ -297,8 +297,8 @@ footer {
     height: auto;
     border: 1px solid #f6f6f6;
     border-radius: 15px;
-    box-shadow: 0 0 10px #d4d4d4;
-    background-color: white;
+    box-shadow: 0 0 $padding #d4d4d4;
+    background-color:$white;
     margin: 30px;
     position: relative;
   }
@@ -328,16 +328,16 @@ footer {
   .card__h3 {
     margin-block-end:0 ;
     margin-block-start:0 ;
-    padding-top: 10px;
+    padding-top: $padding;
     padding-bottom: 5px;
-    padding-left: 10px;
+    padding-left: $padding;
   }
   .card__h4{
 
    margin-block-end:0 ;
     margin-block-start:0 ;
     padding-bottom: 0px;
-    padding-left: 10px;
+    padding-left: $padding;
   }
   .card__h5{
   margin-block-start: 0;
@@ -353,7 +353,7 @@ footer {
 header{
   width: 100%;
   height: auto;
-  padding: 10px 0;
+  padding: $padding 0;
   text-align:center;
   .header__logo{
     font-family: "srhikhand";
@@ -394,7 +394,7 @@ header{
      height: 50px;
      background-color: #f6f6f6;
      box-shadow: 4 px 4px 8px #e5e5e5;
-     border-radius: 10px;
+     border-radius: $padding;
      cursor: pointer;
 
      &:hover{
@@ -406,7 +406,7 @@ header{
  border-radius: 15px;
  padding: 7px 12px;
  background: $mauve;
- color: white;
+ color: $white;
  transform: translate(-60px);
 }
 /*SECTION LISTE DES RESTAURANTS*/
@@ -439,7 +439,7 @@ header{
 footer {
   list-style-type: none;
   background-color: #353535;
-  color:white;
+  color:$white;
   padding: $padding+10;
 }
 .footer__icon{
@@ -479,9 +479,9 @@ footer {
     height:230px;
     border: 1px solid #f6f6f6;
     border-radius: 15px;
-    box-shadow: 0 0 10px #d4d4d4;
-    background-color: white;
-    margin: 10px;
+    box-shadow: 0 0 $padding #d4d4d4;
+    background-color: $white;
+    margin: $padding;
     position: relative;
     }
   .img__link{
@@ -523,9 +523,9 @@ footer {
 footer{
   display: flex;
   justify-content: space-between;
-  padding-right: 10px;
+  padding-right: $padding;
   padding-bottom: 20px;
-  padding-left: 10px;
+  padding-left: $padding;
 }
 .footer-flex{
   display: flex;
@@ -544,7 +544,7 @@ footer{
   align-items: center;
   margin-block-end: 0;
   margin-block-start: 0;
-  margin-left: 10px;
+  margin-left: $padding;
 }
 .footer__icon {
   margin-right: 5px;
@@ -570,7 +570,7 @@ footer{
     }
   /* SECTION FILTERS : FONCTIONNEMENT*/
     .filters-section{
-    padding: 10px;
+    padding: $padding;
        }
     .filters-ul{
       list-style: none;
@@ -589,7 +589,7 @@ footer{
          height: 50px;
          background-color: #f6f6f6;
          box-shadow: 4 px 4px 8px #e5e5e5;
-         border-radius: 10px;
+         border-radius: $padding;
          cursor: pointer;
          margin-right: 0px;
          padding: 5px 20px;
@@ -603,7 +603,7 @@ footer{
      border-radius: 15px;
      padding: 7px 12px;
      background: $mauve;
-     color: white;
+     color:$white;
      transform: translate(-30px);
    }
    .icon--filters{
@@ -627,9 +627,9 @@ footer{
       height: 220px;
       border: 1px solid #f6f6f6;
       border-radius: 15px;
-      box-shadow: 0 0 10px #d4d4d4;
-      background-color: white;
-      margin: 10px;
+      box-shadow: 0 0 $padding #d4d4d4;
+      background-color:$white;
+      margin: $padding;
       margin-top: 0px;
       position: relative;
       }
@@ -660,7 +660,7 @@ footer{
       .card__h3 {
         margin-block-end:0 ;
         margin-block-start:0 ;
-        padding-top: 10px;
+        padding-top: $padding;
         padding-bottom: 5px;
         padding-left: 5px;
         font-size: 16px;
@@ -669,7 +669,7 @@ footer{
        margin-block-end:0 ;
         margin-block-start:0 ;
         padding-bottom: 0px;
-        padding-left: 10px;
+        padding-left: $padding;
       }
     .card__h5{
       margin-block-start: 0;
@@ -683,7 +683,7 @@ footer{
     }
   .btn__heart{
     transform: translate(180px, -40px);
-    color: #9356DC;
+    color: $mauve;
   }
   /*FOOTER*/
   footer{
@@ -744,9 +744,9 @@ footer{
         height: 250px;
         border: 1px solid #f6f6f6;
         border-radius: 15px;
-        box-shadow: 0 0 10px #d4d4d4;
-        background-color: white;
-        margin: 10px;
+        box-shadow: 0 0 $padding #d4d4d4;
+        background-color: $white;
+        margin: $padding;
         position: relative;
         margin-top: 0px;
         }
@@ -782,7 +782,7 @@ footer{
         } 
     .btn__heart{
       transform: translate(200px, -30px);
-      color: #9356DC;
+      color: $mauve;
     }
      /*FOOTER*/
      footer{
@@ -853,11 +853,11 @@ footer{
         height: auto;
         border: 1px solid #f6f6f6;
         border-radius: 15px;
-        box-shadow: 0 0 10px #d4d4d4;
-        background-color: white;
-        margin: 10px;
+        box-shadow: 0 0 $padding #d4d4d4;
+        background-color: $white;
+        margin: $padding;
         position: relative;
-        margin-top: 10px;
+        margin-top: $padding;
         &:hover{
           transform: scaleZ(1.15);
         }
@@ -889,7 +889,7 @@ footer{
         .card__h3 {
           margin-block-end:0 ;
           margin-block-start:0 ;
-          padding-top: 10px;
+          padding-top: $padding;
           padding-bottom: 5px;
           padding-left: 5px;
           font-size: 16px;
@@ -902,7 +902,7 @@ footer{
         }
         .btn__heart{
           transform: translate(230px, -40px);
-          color: #9356DC;
+          color: $mauve;
         }
         .btn__submit{
           margin-left: 35%;
@@ -936,7 +936,7 @@ footer{
 header{
   width: 100%;
   height: auto;
-  padding: 10px 0;
+  padding: $padding 0;
   text-align:center;
   .header__logo{
     font-family: "srhikhand";
@@ -981,9 +981,9 @@ header{
       height: 220px;
       border: 1px solid #f6f6f6;
       border-radius: 15px;
-      box-shadow: 0 0 10px #d4d4d4;
-      background-color: white;
-      margin: 10px;
+      box-shadow: 0 0 $padding #d4d4d4;
+      background-color: $white;
+      margin: $padding;
       position: relative;
       margin-top: 0px;
       &:hover{
@@ -1014,8 +1014,8 @@ header{
   /*FOOTER*/
 footer {
   background-color: #353535;
-  color: white;
-  padding-left: 10px;
+  color: $white;
+  padding-left:$padding;
   padding:20px ;
   margin-top: 0px;
 }
