@@ -170,11 +170,12 @@ main{
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  transform: translate(0px, -15px);
+  transform: translate(0px, -20px);
 }
 .menu__item__check{
   display: flex;
-  transform: translate(320px, -30px);
+  position: absolute;
+  transform: translate(320px, -45px);
   animation: checkin 2s  cubic-bezier(0.250, 0.460, 0.450, 0.940)  backwards;
 }
   
