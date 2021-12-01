@@ -10,50 +10,7 @@
  
   display: block;
 }
-/* VARIABLES */
-$mauve:#9356DC;
-$white:white;
-
-$padding:10px;
-
-/*CERCLE = CHARGEMENT*/
-
-/*loader circle-spin*/
-
-aside{
-  height: 500px;
-  line-height: 500px;
-  background-color:$white;
-}
-.loader{
-  width: 50px;
-  height: 50px;
-  vertical-align: middle;
-  position: relative;/* position globale*/
-  display: flex;
-}
-.loader-circle{
-  border-radius: 50px;
-  border: 6px solid #FF79DA;
-  position: relative; /*pour bien positionner le quart de cercle*/
-}
-.loader-circle:after{ /*pseudo-élément*/
-  content: "";
-  position: absolute;
-  top:-6px; left: -6px;
-  bottom: -6px;
-  right: -6px;
-  border: 6px solid transparent;
-  border-radius: 50px;
-  border-top-color: $mauve;
-  border-bottom-color:$mauve;
-  animation:spin 1s linear 0s  infinite;
-}
-@keyframes spin{
-  0%{ transform: rotate(0deg);}
-  100%{transform: rotate(360deg);
-  }
-}
+ 
 /*GENERALITE*/
 *{
   box-sizing: border-box;
@@ -63,6 +20,90 @@ body{
   margin:0;
 }
 
+/* Mixins */
+@mixin flexbox-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin button-hover {
+  opacity: 0.8;
+  cursor: pointer;
+  transition: .3s;
+  box-shadow: 0px 0px $padding 0px rgba(0,0,0,0.6);    
+}
+
+
+/* VARIABLES */
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+$mauve:#9356DC;
+$white:white;
+$padding:10px;
+
+/*CHARGEMENT LOADER*/
+//Spinner loading: sa position
+.spinner {
+  height: 100%;
+  background: white;
+  margin: auto;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 20;
+  animation: spinner 2s linear ;
+  visibility: hidden;
+  &__border {
+      @include flexbox-center;
+      border: 10px solid transparent;
+      border-top: 10px solid $color-primary;
+      border-bottom: 10px solid $color-secondary;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      margin: auto;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      animation: spinner-border 2s linear ;
+      z-index: 10;
+      visibility: hidden;
+  }
+  &__center {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: $color-tertiary;
+  
+  }
+}
+// Animation Loading spinner //
+@keyframes spinner {
+  0% {
+      visibility: visible;
+      opacity: 0.9;
+  }
+  70% {
+      opacity: 0.9;
+  }
+  100% {
+      opacity: 0;
+      visibility: hidden;
+  }
+}
+@keyframes spinner-border {
+  0% {
+      visibility: visible;
+      opacity: 1;
+  }
+  70% {
+      opacity: 1;
+  }
+  100% {
+      transform: rotate(360deg);
+      opacity: 0;
+      visibility: hidden;
+  }
+}
 /*HEADER ET LOGO*/
 header{
   width: 100%;
@@ -95,7 +136,7 @@ nav{
 .icon--map{
   margin: $padding $padding $padding 40px;
 }
-/*BOUTONS*/
+/*BOUTONS ANIMES*/
 .btn__submit{
   font-size: 20px;
   font-weight: 500;
@@ -106,9 +147,25 @@ nav{
   box-shadow: 1px 1px 5px grey;
   color:$white;
   cursor: pointer;
-  transform: scale(1);
   &:hover{
-    transform: scale(1.15);
+    @include button-hover;
+    animation-name:zoombig ;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+  }
+}
+ /*ANIMATION ZOOMER EN GRAND*/
+ @keyframes zoombig {
+  0%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(1.2);
   }
 }
 
@@ -118,7 +175,7 @@ nav{
   display: block;
   transform: translate(250px, -40px);
 }
-
+/*ANIMATION SLIDE*/
 .animation{
 animation: slideleft 1s linear both;
 }
@@ -133,14 +190,6 @@ animation: slideleft 1s linear both;
   }
 }
 
-
-
-@mixin button-hover {
-  opacity: 0.8;
-  cursor: pointer;
-  transition: .3s;
-  box-shadow: 0px 0px $padding 0px rgba(0,0,0,0.6);    
-}
 
 /*CALL TO ACTION*/
 .call-action{
@@ -812,17 +861,14 @@ footer{
   }
   @media  screen and (min-width:1000px){
     /*NAVIGATION DE RECHERCHE*/
-    nav{
-      border-bottom: #d4d4d4 solid 2px;
-    }
-    /*SECTION FILTERS: FONCTIONNEMENT*/
-    .filters-section{
-      z-index: -1;
-    }
+    
+/*SECTION FILTERS: FONCTIONNEMENT*/
+
     .filters__li{
       &:hover{
       opacity: 0.8;
       cursor: pointer;
+      z-index: 5;
     }
   }
   .filters__num{
@@ -839,8 +885,7 @@ footer{
       padding: 20px 20px;
       background-color:whitesmoke;
       display: flex;
-      z-index: -1;
-      
+      border-radius: 15px 15px 15px 15px;   
       align-items: center;
     }
     .resto__h2{
@@ -859,7 +904,7 @@ footer{
         position: relative;
         margin-top: $padding;
         &:hover{
-          transform: scaleZ(1.15);
+          transform: scale(1.03);
         }
         }
       .card--new{
@@ -907,7 +952,7 @@ footer{
         .btn__submit{
           margin-left: 35%;
         }
-        /*FOOTER*/
+/*FOOTER*/
 footer{
   display: flex;
   justify-content: space-between;
@@ -923,7 +968,6 @@ footer{
 .footer__icon {
   margin-right: 5px;
 }
-
   }
 @media screen and (min-width:1200px){
   body{
@@ -932,7 +976,7 @@ footer{
     margin-left: 30px;
     margin-right: 0px;
   }
-  /*HEADER ET LOGO*/
+/*HEADER ET LOGO*/
 header{
   width: 100%;
   height: auto;
@@ -945,7 +989,7 @@ header{
     width: 20%;
     }
   }
-  /*CALL TO ACTION*/
+/*CALL TO ACTION*/
   .call-action{
     width: 100%;
     height: auto;
@@ -953,6 +997,15 @@ header{
     justify-content: center;
     align-items: center;
     padding: 30px 60px;
+    box-shadow: 4px 4px 8px #d4d4d4;
+    animation: apparition;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-delay: 0.5s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
   }
     h1{
       font-size: 30px;
@@ -966,11 +1019,31 @@ header{
       margin-block-start: 0;
       margin-block-end: 0;
     }
-    /*SECTION FILTERS : FONCTIONNEMENT*/
+/*SECTION FILTERS : FONCTIONNEMENT*/
+    .filters-section{
+  animation: apparition;
+  animation-duration: 4s;
+  animation-timing-function: ease;
+  animation-delay: 0.8s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+    }
     .icon--filters{
       margin-right: 100px;
     }
-    /*SECTION LISTE DES RESTAURANTS*/
+/*SECTION LISTE DES RESTAURANTS*/
+    .resto-list{
+      animation: apparition;
+      animation-duration: 4s;
+      animation-timing-function: ease;
+      animation-delay: 1.2s;
+      animation-iteration-count: 1;
+      animation-direction: normal;
+      animation-fill-mode: none;
+      animation-play-state: running;
+    }
     .resto__h2{
       align-self: flex-start;
       margin-block-start: 0;
@@ -979,21 +1052,45 @@ header{
     .resto-card{
       width: 30%;
       height: 220px;
-      border: 1px solid #f6f6f6;
+      border: 1px solid #d4d4d4;
       border-radius: 15px;
-      box-shadow: 0 0 $padding #d4d4d4;
       background-color: $white;
       margin: $padding;
       position: relative;
       margin-top: 0px;
       &:hover{
-        transform: scaleZ(1.15);
-        box-shadow: 0 0 0 4px #d4d4d4;
-        z-index: 2;
+        box-shadow: 4px 4px 8px #d4d4d4;
+        z-index: 5;
+        animation-name: zoomer ;
+        animation-duration: 0.4s;
+        animation-timing-function: ease;
+        animation-delay: 0s;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-fill-mode: none;
+        animation-play-state: running;
+    }
       }
-      }
-      
-      .card__img{
+/*ANIMATION ZOOMER*/
+@keyframes zoomer {
+  0%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(1.05);
+  }
+}
+.zoomer{
+    animation-name:zoomer ;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+}      
+  .card__img{
         width: 100%;
         height:150px;
         border-radius: 15px 15px 0 0;
@@ -1010,14 +1107,21 @@ header{
   .marg--right{
     margin-right: 100px;
   }
-  
-  /*FOOTER*/
-footer {
+/*FOOTER*/
+footer{
   background-color: #353535;
   color: $white;
   padding-left:$padding;
   padding:20px ;
   margin-top: 0px;
+  animation: apparition;
+  animation-duration: 4s;
+  animation-timing-function: ease;
+  animation-delay: 1.2s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
 }
 .footer-flex{
   display: flex;
@@ -1039,6 +1143,25 @@ footer {
 }
 .footer__icon {
   margin-right: 5px;
+}
+/*ANIMATION APPARITION BY SCALE*/
+@keyframes apparition {
+  0%{
+    transform: scale(0.1);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+.apparition {
+    animation-name:apparition ;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+    animation-delay: 0;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
 }
 }
 

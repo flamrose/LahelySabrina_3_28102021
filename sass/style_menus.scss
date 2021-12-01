@@ -10,7 +10,7 @@
 
 body {
   width: 100%;
-  margin: auto;
+  margin: 0;
   display: block;
 }
 
@@ -59,7 +59,7 @@ main{
   flex-wrap: nowrap;
   justify-content: space-evenly;
 }
-h1{
+.header__menu__titre{
   font-family: "shrikhand";
   font-size: 28px;
   font-weight: bold;
@@ -93,50 +93,51 @@ h1{
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  background-color: #99E2D0;
-
+  color: #99E2D0;
   font-size: x-large;
-  transform: translate(25px, -15px);
-  opacity: 1;
-  animation: checkin 2s  cubic-bezier(0.250, 0.460, 0.450, 0.940)  backwards;
 }
   .btn__check:hover{
-    opacity: 1;
     transform: rotate(360deg);
     animation: checkin 2s  cubic-bezier(0.250, 0.460, 0.450, 0.940)  backwards;
   }
 
 /*CODE*/
 .slide-left {
-	-webkit-animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) backwards;
 	        animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) backwards;
 }
  @keyframes checkin {
   0% {
-    -webkit-transform: translate(0px, -15px) rotate(0);
-            transform: translate(0px, -15px) rotate(0);
+            transform: translate(320px);
             opacity: 0;
   }
   100% {
-    -webkit-transform: translate(-20px, -15px) rotate(360deg);
-            transform: translateX(-20px, -15px) rotate(360deg);
+            transform: translateX(280px);
             margin-left: 50px;
             opacity: 1;
   }
   0% {
-    -webkit-transform: translateX(0px, -15px);
-            transform: translateX(0px, -15px);
+            transform: translateX(320px);
+            visibility: hidden;
             opacity: 0;
   }
 }
 
 /* SECTION MENUS */
-.choix{
-  padding-inline-start: 0;
-  margin-bottom: 20px;
-}
-.assiette{
+/*new code html*/
+.sub-menu /*les Entrées*/
+.sub__menu__title{
+    font-weight: normal;
+    margin-right: 300px;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+  }
+.sub__menu__border{
+    border: #99E2D0 solid 2px;
+    width: 40px;
+    margin-left: 1px;
+    padding-left: 10px;
+  }
+.menu__item{
   width: 90%;
   height: fit-content;
   align-items: center;
@@ -144,122 +145,140 @@ h1{
   box-shadow: 4px 4px 8px #e5e5e5;
   border-radius: 10px;
   cursor: pointer;
+  padding: 0 10px;
   margin-bottom: 20px;
 }
-.h2__menus{
-  font-weight: normal;
-  margin-right: 300px;
-  margin-block-end: 0;
-}
-.h2__menus--border{
-  border: #99E2D0 solid 2px;
-  width: 40px;
-  margin-left: 1px;
-  padding-left: 10px;
-}
-.description{
-  display: flex;
-  justify-content: space-between;
-}
-.h3--menus{
+.menu__item__head
+
+
+.menu__item__title{
   font-weight: bold;
-  padding-top: 10px;
+  font-size: 20px;
   margin-block-end: 0;
   margin-block-start: 0;
-  padding-left: 10px;
+  padding-top: 10px; 
 }
-.h4--menus{
-  font-weight: normal;
+.menu__item__description{
+  font-size: 16px;
   margin-block-start: 0;
   margin-block-end: 0;
   padding-top: 0px;
-  white-space: nowrap;
-  padding-left: 10px;
+  white-space: nowrap; 
 }
-.price{
+.menu__item__price{
   font-weight: bold;
   display: flex;
-  padding-right: 0px;
-  padding-left: 0px;
+  flex-direction: row;
+  justify-content: flex-end;
+  transform: translate(0px, -15px);
 }
+.menu__item__check{
+  display: flex;
+  transform: translate(320px, -30px);
+  animation: checkin 2s  cubic-bezier(0.250, 0.460, 0.450, 0.940)  backwards;
+}
+  
+/*A REVOIR*/
+.btn__confirm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #99E2D0;
+  font-size: x-large;
+  transform: translate(45px, -15px);
+  transform: rotate(360deg);
+  opacity: 1;
+  animation: checkin 2s  cubic-bezier(0.250, 0.460, 0.450, 0.940)  backwards;
+}
+   /* MENU ANIMATION*/
 
-/* MENU ANIMATION*/
 
-
-.li:nth-child(1){
-  animation: slide-bottom;
-  animation-duration: 0.5s;
+.delay-1{
+  animation: slide-down;
+  animation-duration: 0.2s;
   animation-timing-function:cubic-bezier(0.250, 0.460, 0.450, 0.940) ;
-  animation-delay: 0.5s;
+  animation-delay: 0;
   animation-fill-mode: both;
 }
-.li:nth-child(2){
-  animation: slide-bottom; 
-  animation-duration: 0.5s;
+.delay-2{
+  animation: slide-down; 
+  animation-duration: 0.4s;
   animation-timing-function:cubic-bezier(0.250, 0.460, 0.450, 0.940) ;
-  animation-delay: 1s;
+  animation-delay: 0;
   animation-fill-mode: both;
   
 }
-.li:nth-child(3){
-  animation: slide-bottom;
-  animation-duration: 0.5s;
+.delay-3{
+  animation: slide-down;
+  animation-duration: 0.6s;
   animation-timing-function:cubic-bezier(0.250, 0.460, 0.450, 0.940) ;
-  animation-delay: 1.5s;
+  animation-delay: 0;
   animation-fill-mode: both;
   
 }
-.li:nth-child(4){
-  animation-duration: 0.5s;
+.delay-4{
+  animation: slide-down;
+  animation-duration: 0.8s;
   animation-timing-function:cubic-bezier(0.250, 0.460, 0.450, 0.940) ;
-  animation-delay: 0.8s;
+  animation-delay: 0.4s;
   animation-fill-mode: both; 
   
 }
-.li:nth-child(5){
+.delay-5{
   animation-delay: 0.5s;
 }
-.li:nth-child(6){
+.delay-6{
   animation-delay: 0.6s;
 }
-.li:nth-child(7){
+.delay-7{
   animation-delay: 0.7s;
 }
-.li:nth-child(8){
+.delay-8{
   animation-delay: 0.8s;
 }
-.li:nth-child(2):nth-child(9){
+.delay-9{
   animation-delay: 0.9s;
 }
-.li:nth-child(10){
+.delay-10{
   animation-delay: 10s;
 }
 
-.defile-anim {
-  display: block;
-  cursor: pointer;
-  overflow: hidden;
-  animation: defile 0s linear 0.5s  ;
-}
-/*ANIMATION */
-.slide-bottom {
-	-webkit-animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-	        animation: slide-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+/*ANIMATION APPARITION BY SLIDE DOWN*/
+.slide-down {
+	        animation: slide-down 0.5 cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 /*slide down*/
- @keyframes slide-bottom {
+ @keyframes slide-down {
   0% {
-    -webkit-transform: translateY(-100px);
             transform: translateY(-100px);
             opacity: 0;
   }
   100% {
-    -webkit-transform: translateY(0px);
             transform: translateY(0px);
             opacity: 1;
   }
 }
+/*ANIMATION APPARITION BY SCALE*/
+@keyframes apparition {
+  0%{
+    transform: scale(0.1);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
 
+.animation {
+    animation-name:apparition ;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+}
 
 /*CALL TO ACTION*/
 .call-action {
