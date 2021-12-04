@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Roboto", sans-serif, "Shrikhand", cursive;
   src: url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Shrikhand&display=swap");
@@ -13,7 +14,84 @@ body {
   display: block;
 }
 
-/*HEADER LOGO*/
+/* VARIABLES */
+/*ANIMATIONS*/
+/*ANIMATION APPARITION BY SCALE*/
+/* pour btn Like*/
+@keyframes apparition {
+  0% {
+    transform: scale(0.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* pour le btn LIKE*/
+.animation {
+  animation-name: apparition;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+/*ANIMATION APPARITION BY SLIDE DOWN*/
+.slide-down {
+  animation: slide-down 0.5 cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/*slide down pour le défilement des menus*/
+@keyframes slide-down {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+/*ANIMATION MENU__ITEM__CHECK*/
+@keyframes slide-left {
+  0% {
+    transform: translateX(320px) translateY(-40px);
+  }
+  100% {
+    transform: translateX(280px) translateY(-40px);
+  }
+  0% {
+    transform: translateX(320px) translateY(-40px);
+  }
+}
+.btn__check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  transform: rotate(180deg);
+  transition-duration: 0.5s;
+}
+.btn__check:hover {
+  transform: rotate(0);
+}
+
+/*ANIMATION ZOOMER EN GRAND*/
+/*btn-submit*/
+@keyframes zoombig {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+/*HEADER ET LOGO*/
 header {
   width: 100%;
   height: auto;
@@ -47,7 +125,7 @@ header {
 main {
   width: 100%;
   height: auto;
-  background-color: #f6f6f6;
+  background-color: #F6F6F6;
   border-radius: 25px 25px 0 0;
   padding-left: 20px;
   padding-top: 20px;
@@ -61,77 +139,35 @@ main {
   flex-wrap: nowrap;
   justify-content: space-evenly;
 }
-
 .header__menu__titre {
   font-family: "shrikhand";
   font-size: 28px;
   font-weight: bold;
 }
 
-/*BOUTONS */
-.btn__submit {
-  font-size: 20px;
-  font-weight: 500;
-  padding: 15px 30px;
-  border: 1px solid transparent;
-  border-radius: 100px;
-  background: linear-gradient(#9356DC, #FF79DA);
-  box-shadow: 1px 1px 5px grey;
-  color: white;
-  cursor: pointer;
-  margin-left: 80px;
-}
-
-.btn__submit:hover {
-  transform: scale(1.15);
-}
-
 .btn__heart {
   font-size: xx-large;
   color: #9356DC;
+  position: relative;
+  transform: translate(50px, -4px);
+}
+.btn__heart:hover {
+  color: white;
 }
 
-.btn__heart--like {
-  background-color: #9356DC #FF79DA;
+.btn__like {
+  font-size: xx-large;
+  color: #9356DC;
+  opacity: 0;
+}
+.btn__like:hover {
+  opacity: 1;
+  overflow: hidden;
+  animation: apparition 0.2s ease 0s normal both;
 }
 
-/* btn__check */
-.btn__check {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #99E2D0;
-  font-size: x-large;
-}
-
-.btn__check:hover {
-  transform: rotate(360deg);
-  animation: checkin 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) backwards;
-}
-
-/*CODE*/
-.slide-left {
-  animation: slide-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) backwards;
-}
-
-@keyframes checkin {
-  0% {
-    transform: translate(320px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(280px);
-    margin-left: 50px;
-    opacity: 1;
-  }
-  0% {
-    transform: translateX(320px);
-    visibility: hidden;
-    opacity: 0;
-  }
-}
 /* SECTION MENUS */
-/*new code html*/
+/*new */
 .sub-menu .sub__menu__title {
   font-weight: normal;
   margin-right: 300px;
@@ -146,34 +182,37 @@ main {
   padding-left: 10px;
 }
 
+/*.menu__item__head*/
 .menu__item {
   width: 90%;
   height: fit-content;
   align-items: center;
   background-color: white;
+  padding: 0 10px;
+  margin-bottom: 20px;
   box-shadow: 4px 4px 8px #e5e5e5;
   border-radius: 10px;
   cursor: pointer;
-  padding: 0 10px;
-  margin-bottom: 20px;
 }
-
-.menu__item__head .menu__item__title {
+.menu__item__title {
   font-weight: bold;
   font-size: 20px;
   margin-block-end: 0;
   margin-block-start: 0;
   padding-top: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
-
 .menu__item__description {
   font-size: 16px;
   margin-block-start: 0;
   margin-block-end: 0;
   padding-top: 0px;
   white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
-
 .menu__item__price {
   font-weight: bold;
   display: flex;
@@ -181,29 +220,73 @@ main {
   justify-content: flex-end;
   transform: translate(0px, -20px);
 }
-
-.menu__item__check {
-  display: flex;
-  position: absolute;
-  transform: translate(320px, -45px);
-  animation: checkin 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) backwards;
+.menu__item__price:hover {
+  margin-right: 30px;
 }
-
-/*A REVOIR*/
-.btn__confirm {
+.menu__item__check {
+  background-color: #99E2D0;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  background-color: #99E2D0;
-  font-size: x-large;
-  transform: translate(45px, -15px);
-  transform: rotate(360deg);
-  opacity: 1;
-  animation: checkin 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) backwards;
+  position: absolute;
+  transform: translate(260px, -40px);
+  margin: 0px -30px -20px 20px;
+}
+.menu__item__check:hover {
+  margin-left: 30px;
 }
 
-/* MENU ANIMATION*/
+/*.menu__item__check{
+  color: #99E2D0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  transform: translate(320px, -40px);
+  margin-right: -20px;
+
+  &:hover{
+    animation: slide-left;
+    animation-duration: 0.5s;
+    animation-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-fill-mode: both;
+
+  }
+}
+*/
+@keyframes slide-left {
+  0% {
+    transform: translateX(320px) translateY(-40px);
+  }
+  100% {
+    transform: translateX(280px) translateY(-40px);
+  }
+  0% {
+    transform: translateX(320px) translateY(-40px);
+  }
+}
+.btn__check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  transform: rotate(180deg);
+  transition-duration: 0.5s;
+}
+.btn__check:hover {
+  transform: rotate(0);
+}
+
+.icon__check {
+  color: #99E2D0;
+}
+
+/*Défilement des menu__item*/
 .delay-1 {
   animation: slide-down;
   animation-duration: 0.2s;
@@ -232,7 +315,7 @@ main {
   animation: slide-down;
   animation-duration: 0.8s;
   animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  animation-delay: 0.4s;
+  animation-delay: 0;
   animation-fill-mode: both;
 }
 
@@ -260,33 +343,37 @@ main {
   animation-delay: 10s;
 }
 
-/*ANIMATION APPARITION BY SLIDE DOWN*/
-.slide-down {
-  animation: slide-down 0.5 cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+/*CALL TO ACTION*/
+.call-action {
+  width: 100%;
+  height: auto;
+  background: #F6F6F6;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 0px;
+  padding-bottom: 25px;
+  margin-left: 0px;
 }
 
-/*slide down*/
-@keyframes slide-down {
-  0% {
-    transform: translateY(-100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
+/*BOUTONS */
+.btn__submit {
+  font-size: 20px;
+  font-weight: 500;
+  padding: 15px 30px;
+  border: 1px solid transparent;
+  border-radius: 100px;
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  box-shadow: 1px 1px 5px grey;
+  color: white;
+  cursor: pointer;
+  margin-left: 80px;
 }
-/*ANIMATION APPARITION BY SCALE*/
-@keyframes apparition {
-  0% {
-    transform: scale(0.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-.animation {
-  animation-name: apparition;
+.btn__submit:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
+  animation-name: zoombig;
   animation-duration: 0.4s;
   animation-timing-function: ease;
   animation-delay: 0s;
@@ -294,18 +381,6 @@ main {
   animation-direction: normal;
   animation-fill-mode: none;
   animation-play-state: running;
-}
-
-/*CALL TO ACTION*/
-.call-action {
-  width: 100%;
-  height: auto;
-  background: #f6f6f6;
-  justify-content: center;
-  align-items: center;
-  padding: 0px 0px;
-  padding-bottom: 25px;
-  margin-left: 0px;
 }
 
 /*FOOTER*/
@@ -364,7 +439,7 @@ footer {
   main {
     width: 100%;
     height: auto;
-    background-color: #f6f6f6;
+    background-color: #F6F6F6;
     border-radius: 25px 25px 0 0;
     padding-left: 20px;
     padding-top: 20px;
@@ -374,7 +449,7 @@ footer {
   .btn__heart {
     font-size: xx-large;
     color: #9356DC;
-    margin-right: 30px;
+    transform: translate(80px, -4px);
   }
 
   /* SECTION MENU*/
@@ -402,7 +477,7 @@ footer {
   .call-action {
     width: 100%;
     height: auto;
-    background: #f6f6f6;
+    background: #F6F6F6;
     justify-content: center;
     align-items: center;
     padding: 40px 0px;
@@ -421,11 +496,17 @@ footer {
     object-fit: cover;
   }
 
+  .btn__heart {
+    font-size: xx-large;
+    color: #9356DC;
+    transform: translate(130px, -4px);
+  }
+
   /*MAIN*/
   main {
     width: 100%;
     height: auto;
-    background-color: #f6f6f6;
+    background-color: #F6F6F6;
     border-radius: 25px 25px 0 0;
     padding-left: 20px;
     padding-top: 20px;
@@ -456,7 +537,7 @@ footer {
   .call-action {
     width: 100%;
     height: auto;
-    background: #f6f6f6;
+    background: #F6F6F6;
     justify-content: center;
     align-items: center;
     padding-top: 20px;
@@ -498,7 +579,7 @@ footer {
     margin-left: 10px;
   }
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) {
   body {
     margin: 0;
     display: block;
@@ -538,7 +619,7 @@ footer {
   main {
     width: 100%;
     height: auto;
-    background-color: #f6f6f6;
+    background-color: #F6F6F6;
     border-radius: 25px 25px 0 0;
     padding-left: 20px;
     padding-top: 20px;
@@ -546,7 +627,7 @@ footer {
 
   /*BOUTONS*/
   .btn__heart {
-    transform: translate(0px, 0px);
+    transform: translate(143px, 0px);
     color: #9356DC;
   }
 
@@ -559,7 +640,7 @@ footer {
   .call-action {
     width: 100%;
     height: auto;
-    background: #f6f6f6;
+    background: #F6F6F6;
     justify-content: center;
     align-items: center;
     margin-left: 0;
@@ -596,7 +677,7 @@ footer {
   main {
     width: 100%;
     height: auto;
-    background-color: #f6f6f6;
+    background-color: #F6F6F6;
     border-radius: 25px 25px 0 0;
     padding-left: 100px;
     padding-top: 20px;
@@ -622,13 +703,8 @@ footer {
 
   /*BOUTONS*/
   .btn__heart {
-    transform: translate(0px, 0px);
+    transform: translate(160px, 0px);
     color: #9356DC;
-  }
-
-  .ul--down {
-    margin-top: 0px;
-    margin-left: 0px;
   }
 
   .btn__submit {
@@ -656,7 +732,7 @@ footer {
   .call-action {
     width: 100%;
     height: auto;
-    background: #f6f6f6;
+    background: #F6F6F6;
     justify-content: center;
     align-items: center;
     margin-left: 0;
@@ -695,7 +771,7 @@ footer {
   main {
     width: 100%;
     height: auto;
-    background-color: #f6f6f6;
+    background-color: #F6F6F6;
     border-radius: 25px 25px 0 0;
     padding-left: 20px;
     padding-top: 20px;
@@ -721,7 +797,7 @@ footer {
 
   /*BOUTONS*/
   .btn__heart {
-    transform: translate(0px, 0px);
+    transform: translate(250px, 0px);
     color: #9356DC;
   }
 
@@ -744,7 +820,7 @@ footer {
 
   .menus-desk {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-evenly;
   }
 
   /*FOOTER*/
@@ -783,29 +859,11 @@ footer {
     font-weight: bold;
   }
 
-  ul {
-    list-style-type: none;
-    padding-inline-start: 20px;
-    margin-bottom: 20px;
-  }
-
-  li {
-    width: 90%;
-    height: fit-content;
-    background-color: white;
-    box-shadow: 4 px 4px 8px #e5e5e5;
-    border-radius: 10px;
-    cursor: pointer;
-    padding-left: 10px;
-    margin-right: 2Opx;
-    transition: margin-right 2s;
-  }
-
   /*SECTION CALL TO ACTION*/
   .call-action {
     width: 100%;
     height: auto;
-    background: #f6f6f6;
+    background: #F6F6F6;
     justify-content: center;
     align-items: center;
     margin-left: 0;

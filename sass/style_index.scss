@@ -38,8 +38,8 @@ body{
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
-$mauve:#9356DC;
 $white:white;
+$fondgrisclair:#F6F6F6;
 $padding:10px;
 
 /*CHARGEMENT LOADER*/
@@ -55,9 +55,9 @@ $padding:10px;
   visibility: hidden;
   &__border {
       @include flexbox-center;
-      border: 10px solid transparent;
-      border-top: 10px solid $color-primary;
-      border-bottom: 10px solid $color-secondary;
+      border: $padding solid transparent;
+      border-top: $padding solid $color-primary;
+      border-bottom: $padding solid $color-secondary;
       border-radius: 50%;
       width: 100px;
       height: 100px;
@@ -143,7 +143,7 @@ nav{
   padding: 15px;
   border: 1px solid transparent;
   border-radius: 100px;
-  background:linear-gradient($mauve, #FF79DA);
+  background:linear-gradient($color-primary, #FF79DA);
   box-shadow: 1px 1px 5px grey;
   color:$white;
   cursor: pointer;
@@ -168,13 +168,27 @@ nav{
     transform: scale(1.2);
   }
 }
-
-.btn__heart{
+.btn__heart {
   font-size: xx-large;
-  color: $mauve;
-  display: block;
+  color: $color-primary;
+  position: relative;
   transform: translate(250px, -40px);
+  
+  &:hover{
+   color: lighten($color-primary, $amount: 100);
+  }
 }
+.btn__like{
+  font-size: xx-large;
+  color: $color-primary;
+  opacity: 0;
+  &:hover{
+    opacity: 1;
+    overflow: hidden;
+    animation:apparition 0.2s ease 0s normal both ;
+  }
+}    
+
 /*ANIMATION SLIDE*/
 .animation{
 animation: slideleft 1s linear both;
@@ -195,7 +209,7 @@ animation: slideleft 1s linear both;
 .call-action{
   width: 100%;
   height: auto;
-  background:#f6f6f6 ;
+  background:$fondgrisclair ;
   justify-content: center;
   align-items: center;
   padding: 60px 60px;
@@ -227,12 +241,12 @@ animation: slideleft 1s linear both;
       justify-content: space-around;
       width: 90%;
       height: 50px;
-      background-color: #f6f6f6;
+      background-color: $fondgrisclair;
       box-shadow: 4px 4px 8px #e5e5e5;
       border-radius: $padding;
       &:hover{
       cursor: pointer;  
-      background: lighten($mauve, 20);
+      background: lighten($color-primary, 20);
       opacity: 0.8;
       }
     }
@@ -240,7 +254,7 @@ animation: slideleft 1s linear both;
 .filters__num{
   border-radius: 15px;
   padding: 7px 12px;
-  background: $mauve;
+  background: $color-primary;
   color: $white;
   transform: translate(-25px); 
 }
@@ -254,7 +268,7 @@ animation: slideleft 1s linear both;
   .resto-card{
     width: 95%;
     height: auto;
-    border: 1px solid #f6f6f6;
+    border: 1px solid $fondgrisclair;
     border-radius: 15px;
     box-shadow: 0 0 $padding #d4d4d4;
     background-color: $white;
@@ -264,8 +278,8 @@ animation: slideleft 1s linear both;
       width: 60px;
       padding: 5px;
       font-size: 14px;
-      background-color: #99E2D0;
-      color:green;
+      background-color: $color-tertiary;
+      color:darken($color-tertiary, $amount: 100);
       position: absolute;
       transform: translate(400%, 100%);   
     }
@@ -330,7 +344,7 @@ footer {
   .filters__num{
     border-radius: 15px;
     padding: 7px 12px;
-    background: $mauve;
+    background: $color-primary;
     color:$white;
     transform: translate(-50px);
   }
@@ -344,7 +358,7 @@ footer {
   .resto-card{
     width: 90%;
     height: auto;
-    border: 1px solid #f6f6f6;
+    border: 1px solid $fondgrisclair;
     border-radius: 15px;
     box-shadow: 0 0 $padding #d4d4d4;
     background-color:$white;
@@ -355,8 +369,8 @@ footer {
       width: 60px;
       padding: 5px;
       font-size: 14px;
-      background-color: #99E2D0;
-      color:green;
+      background-color: $color-tertiary;
+      color:darken($color-tertiary, $amount: 100);
       position: absolute;
       transform: translate(450%, 100%);   
     }
@@ -415,7 +429,7 @@ header{
 .call-action{
   width: 100%;
   height: auto;
-  background:#f6f6f6 ;
+  background:$fondgrisclair ;
   justify-content: center;
   align-items: center;
   padding: 30px 60px;
@@ -441,20 +455,20 @@ header{
      justify-content: space-around;
      width: 90%;
      height: 50px;
-     background-color: #f6f6f6;
+     background-color: $fondgrisclair;
      box-shadow: 4 px 4px 8px #e5e5e5;
      border-radius: $padding;
      cursor: pointer;
 
      &:hover{
-      background: lighten($mauve, 20);
+      background: lighten($color-primary, 20);
      }
    }
  }
 .filters__num{
  border-radius: 15px;
  padding: 7px 12px;
- background: $mauve;
+ background: $color-primary;
  color: $white;
  transform: translate(-60px);
 }
@@ -474,8 +488,8 @@ header{
       width: 60px;
       padding: 5px;
       font-size: 14px;
-      background-color: #99E2D0;
-      color:green;
+      background-color: $color-tertiary;
+      color:darken($color-tertiary,$amount: 100);
       position: absolute;
       transform: translate(700%, 100%);   
     }
@@ -509,7 +523,7 @@ footer {
   .filters__num{
     border-radius: 15px;
     padding: 7px 12px;
-    background: $mauve;
+    background: $color-primary;
     color: $white;
     transform: translate(-90px); 
   }
@@ -526,7 +540,7 @@ footer {
   .resto-card{
     width: 30%;
     height:230px;
-    border: 1px solid #f6f6f6;
+    border: 1px solid $fondgrisclair;
     border-radius: 15px;
     box-shadow: 0 0 $padding #d4d4d4;
     background-color: $white;
@@ -552,8 +566,8 @@ footer {
       width: 60px;
       padding: 5px;
       font-size: 14px;
-      background-color: #99E2D0;
-      color:green;
+      background-color: $color-tertiary;
+      color:darken($color-tertiary, $amount: 100);
       position: absolute;
       transform: translate(200%, 100%);   
     }
@@ -636,7 +650,7 @@ footer{
          justify-content: space-between;
          width: fit-content;
          height: 50px;
-         background-color: #f6f6f6;
+         background-color:$fondgrisclair;
          box-shadow: 4 px 4px 8px #e5e5e5;
          border-radius: $padding;
          cursor: pointer;
@@ -644,14 +658,14 @@ footer{
          padding: 5px 20px;
    
          &:hover{
-          background: lighten($mauve, 20);
+          background: lighten($color-primary, 20);
          }
        }
      }
    .filters__num{
      border-radius: 15px;
      padding: 7px 12px;
-     background: $mauve;
+     background: $color-primary;
      color:$white;
      transform: translate(-30px);
    }
@@ -674,7 +688,7 @@ footer{
   .resto-card{
       width: 30%;
       height: 220px;
-      border: 1px solid #f6f6f6;
+      border: 1px solid $fondgrisclair;
       border-radius: 15px;
       box-shadow: 0 0 $padding #d4d4d4;
       background-color:$white;
@@ -686,8 +700,8 @@ footer{
         width: 60px;
         padding: 5px;
         font-size: 14px;
-        background-color: #99E2D0;
-        color:green;
+        background-color: $color-tertiary;
+        color:darken($color-tertiary, $amount: 100);
         position: absolute;
         transform: translate(220%, 100%);   
       }
@@ -732,7 +746,7 @@ footer{
     }
   .btn__heart{
     transform: translate(180px, -40px);
-    color: $mauve;
+    color: $color-primary;
   }
   /*FOOTER*/
   footer{
@@ -767,7 +781,7 @@ footer{
     .filters__num{
       border-radius: 15px;
       padding: 7px 12px;
-      background: $mauve;
+      background: $color-primary;
       color: $white;
       transform: translate(-30px); 
     }
@@ -791,7 +805,7 @@ footer{
       .resto-card{
         width: 30%;
         height: 250px;
-        border: 1px solid #f6f6f6;
+        border: 1px solid $fondgrisclair;
         border-radius: 15px;
         box-shadow: 0 0 $padding #d4d4d4;
         background-color: $white;
@@ -803,8 +817,8 @@ footer{
           width: 60px;
           padding: 5px;
           font-size: 14px;
-          background-color: #99E2D0;
-          color:green;
+          background-color: $color-tertiary;
+          color:darken($color-tertiary, $amount: 100);
           position: absolute;
           transform: translate(200%, 100%);    
         }
@@ -831,7 +845,7 @@ footer{
         } 
     .btn__heart{
       transform: translate(200px, -30px);
-      color: $mauve;
+      color: $color-primary;
     }
      /*FOOTER*/
      footer{
@@ -874,7 +888,7 @@ footer{
   .filters__num{
     border-radius: 15px;
     padding: 7px 12px;
-    background: $mauve;
+    background: $color-primary;
     color: $white;
     transform: translate(-30px); 
   }
@@ -896,7 +910,7 @@ footer{
     .resto-card{
         width: 30%;
         height: auto;
-        border: 1px solid #f6f6f6;
+        border: 1px solid $fondgrisclair;
         border-radius: 15px;
         box-shadow: 0 0 $padding #d4d4d4;
         background-color: $white;
@@ -911,8 +925,8 @@ footer{
           width: 60px;
           padding: 5px;
           font-size: 14px;
-          background-color: #99E2D0;
-          color:green;
+          background-color: $color-tertiary;
+          color:darken($color-tertiary, $amount: 100);
           position: absolute;
           transform: translate(350%, 100%);   
         }
@@ -947,7 +961,7 @@ footer{
         }
         .btn__heart{
           transform: translate(230px, -40px);
-          color: $mauve;
+          color: $color-primary;
         }
         .btn__submit{
           margin-left: 35%;
@@ -993,7 +1007,7 @@ header{
   .call-action{
     width: 100%;
     height: auto;
-    background:#f6f6f6 ;
+    background:$fondgrisclair ;
     justify-content: center;
     align-items: center;
     padding: 30px 60px;
@@ -1036,7 +1050,7 @@ header{
 /*SECTION LISTE DES RESTAURANTS*/
     .resto-list{
       animation: apparition;
-      animation-duration: 4s;
+      animation-duration: 3s;
       animation-timing-function: ease;
       animation-delay: 1.2s;
       animation-iteration-count: 1;
@@ -1115,7 +1129,7 @@ footer{
   padding:20px ;
   margin-top: 0px;
   animation: apparition;
-  animation-duration: 4s;
+  animation-duration: 3s;
   animation-timing-function: ease;
   animation-delay: 1.2s;
   animation-iteration-count: 1;

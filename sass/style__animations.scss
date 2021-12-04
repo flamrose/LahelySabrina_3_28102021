@@ -1,0 +1,99 @@
+/**, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+ 
+  display: block;
+}
+ 
+/*GENERALITE*/
+*{
+    box-sizing: border-box;
+  }
+  body{
+    display: block;
+    margin:0;
+  }
+  
+  /* Mixins */
+  @mixin flexbox-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @mixin button-hover {
+    opacity: 0.8;
+    cursor: pointer;
+    transition: .3s;
+    box-shadow: 0px 0px $padding 0px rgba(0,0,0,0.6);    
+  }
+  
+  /* VARIABLES */
+  $color-primary: #9356DC;
+  $color-secondary: #FF79DA;
+  $color-tertiary: #99E2D0;
+  $mauve:#9356DC;
+  $white:white;
+  $padding:10px;
+
+  /*ANIMATIONS*/
+  
+  /*ANIMATION APPARITION BY SCALE*/
+@keyframes apparition {
+    0%{
+      transform: scale(0.1);
+    }
+    100%{
+      transform: scale(1);
+    }
+  }
+  .apparition {
+      animation-name:apparition ;
+      animation-duration: 0.4s;
+      animation-timing-function: ease;
+      animation-delay: 0;
+      animation-iteration-count: 1;
+      animation-direction: normal;
+      animation-fill-mode: none;
+      animation-play-state: running;
+  }
+ /*ANIMATION ZOOMER EN GRAND*/
+ .zoombig{
+    @include button-hover;
+    animation-name:zoombig ;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+  }
+
+ @keyframes zoombig {
+    0%{
+      transform: scale(1);
+    }
+    100%{
+      transform: scale(1.2);
+    }
+  }
+ /*ANIMATION ZOOMER*/
+@keyframes zoomer {
+    0%{
+      transform: scale(1);
+    }
+    100%{
+      transform: scale(1.05);
+    }
+  }
+  .zoomer{
+      animation-name:zoomer ;
+      animation-duration: 0.4s;
+      animation-timing-function: ease;
+      animation-delay: 0s;
+      animation-iteration-count: 1;
+      animation-direction: normal;
+      animation-fill-mode: none;
+      animation-play-state: running;
+  }       
+  /*animation: slide-left 2s  cubic-bezier(0.250, 0.460, 0.450, 0.940)  backwards;*/
