@@ -156,17 +156,17 @@ main{
   transform: translate(50px, -4px);
   
   &:hover{
-   color: lighten($color-primary, $amount: 100);
+   opacity:0.5 ;
   }
 }
 .btn__like{
   font-size: xx-large;
   color: $color-primary;
-  opacity: 0;
+ 
   &:hover{
-    opacity: 1;
     overflow: hidden;
     animation:apparition 0.2s ease 0s normal both ;
+    z-index: 20;
   }
 }         
 /* SECTION MENUS */

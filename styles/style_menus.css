@@ -152,18 +152,17 @@ main {
   transform: translate(50px, -4px);
 }
 .btn__heart:hover {
-  color: white;
+  opacity: 0.5;
 }
 
 .btn__like {
   font-size: xx-large;
   color: #9356DC;
-  opacity: 0;
 }
 .btn__like:hover {
-  opacity: 1;
   overflow: hidden;
   animation: apparition 0.2s ease 0s normal both;
+  z-index: 20;
 }
 
 /* SECTION MENUS */
