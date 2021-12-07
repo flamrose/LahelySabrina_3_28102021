@@ -29,7 +29,7 @@ $padding:10px;
 
 /*ANIMATIONS*/
 /*ANIMATION APPARITION BY SCALE*//* pour btn Like*/
-@keyframes apparition {
+@keyframes likin {
   0%{
   transform: scale(0.1);
   }
@@ -39,14 +39,12 @@ $padding:10px;
   }
   /* pour le btn LIKE*/
   .animation {
-  animation-name:apparition ;
+  animation-name:likin ;
   animation-duration: 0.4s;
   animation-timing-function: ease;
   animation-delay: 0s;
-  animation-iteration-count: 1;
   animation-direction: normal;
-  animation-fill-mode: none;
-  animation-play-state: running;
+  animation-fill-mode: both;
   }
 /*ANIMATION APPARITION BY SLIDE DOWN*/
 .slide-down {
@@ -63,33 +61,20 @@ $padding:10px;
     opacity: 1;
 }
 }
-/*ANIMATION MENU__ITEM__CHECK*/
+/*ANIMATION SLIDE LEFT */
+/*pour menu__item ?*/
 @keyframes slide-left {
   0%{
-    transform: translateX(320px) translateY(-40px);
+    transform: translateX(270px) translateY(-60px);
   }
   100%{
-    transform: translateX(280px) translateY(-40px);
+    transform: translateX(240px) translateY(-60px);
   }
   0%{
-    transform: translateX(320px) translateY(-40px);
+    transform: translateX(270px) translateY(-60px);
   }
 }
-.btn__check {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color:$white;
-  width: 20px;
-  height: 20px;
-  border-radius: 20px;
-  transform: rotate(180deg);
-  transition-duration: 0.5s;
 
-  &:hover{
-    transform: rotate(0);
-}
-}
 /*ANIMATION ZOOMER EN GRAND*/ /*btn-submit*/
 @keyframes zoombig {
   0%{
@@ -153,20 +138,19 @@ main{
   font-size: xx-large;
   color: $color-primary;
   position: relative;
-  transform: translate(50px, -4px);
-  
+  transform: translate(48px, -1px);
+    
   &:hover{
-   opacity:0.5 ;
+    transition-property:transparent, 0.2s;
   }
 }
 .btn__like{
   font-size: xx-large;
-  color: $color-primary;
- 
+  color: $fondgrisclair;
+  
   &:hover{
-    overflow: hidden;
-    animation:apparition 0.2s ease 0s normal both ;
-    z-index: 20;
+    color: $color-primary;
+    animation:likin 0.4s ease 0s normal both ;
   }
 }         
 /* SECTION MENUS */
@@ -185,7 +169,7 @@ main{
     padding-left: $padding;
   }
   /*.menu__item__head*/
-.menu__item{
+.menu__item {
   width: 90%;
   height: fit-content;
   align-items: center;
@@ -195,7 +179,15 @@ main{
   box-shadow: 4px 4px 8px #e5e5e5;
   border-radius: $padding;
   cursor: pointer;
-  
+  margin-right: 20px;
+    
+  &__head{
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   flex: 1;
+  }
+
   &__title {
   font-weight: bold;
   font-size: 20px;
@@ -205,7 +197,7 @@ main{
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-}
+  }
   &__description{
   font-size: 16px;
   margin-block-start: 0;
@@ -214,7 +206,8 @@ main{
   white-space: nowrap; 
   text-overflow: ellipsis;
   overflow: hidden;
-}
+  overflow-x: hidden;
+  }
   &__price{
   font-weight: bold;
   display: flex;
@@ -224,55 +217,39 @@ main{
   &:hover{
     margin-right: 30px;
   }
-}
+  }
+
   &__check{
   background-color: $color-tertiary;
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  transform: translate(260px, -40px);
-  margin: 0px -30px -20px 20px ;
-  &:hover{
-    margin-left:30px ;
+  transform: translate(270px, -60px);
   }
-}
-}
 
- 
-  
-
-
-
-/*.menu__item__check{
-  color: #99E2D0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  transform: translate(320px, -40px);
-  margin-right: -20px;
- 
-  &:hover{
-    animation: slide-left;
-    animation-duration: 0.5s;
-    animation-timing-function: cubic-bezier(0.250, 0.460, 0.450, 0.940);
-    animation-delay: 0s;
-    animation-direction: normal;
-    animation-fill-mode: both;
+  &:hover &__check{
    
+    
+    animation-name: slide-check;
+    animation-duration: .3s;
+    animation-delay: 0;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
   }
 }
-*/
-@keyframes slide-left {
+
+
+@keyframes slide-check {
   0%{
-    transform: translateX(320px) translateY(-40px);
+    transform: translateX(270px) translateY(-60px);
   }
   100%{
-    transform: translateX(280px) translateY(-40px);
+
+    transform: translateX(240px) translateY(-60px);
   }
   0%{
-    transform: translateX(320px) translateY(-40px);
+    transform: translateX(270px) translateY(-60px);
   }
 }
 .btn__check {
@@ -284,7 +261,8 @@ main{
   height: 20px;
   border-radius: 20px;
   transform: rotate(180deg);
-  transition-duration: 0.5s;
+  transition-duration: .1s;
+  margin: 20px 10px;
 
   &:hover{
     transform: rotate(0);
@@ -322,6 +300,7 @@ main{
   animation-delay: 0;
   animation-fill-mode: both; 
 }
+/* A supp*/
 .delay-5{
   animation-delay: 0.5s;
 }
@@ -398,7 +377,7 @@ footer {
 .footer__icon {
   margin-right: 5px;
 }
-          
+   
             
 @media screen and (min-width: 500px) {
   body {
@@ -757,7 +736,7 @@ main{
   }
   /*BOUTONS*/
   .btn__heart {
-    transform: translate(250px, 0px);
+    transform: translate(230px, 0px);
     color: $color-primary;
   }
   /* SECTION MENUS*/
@@ -812,8 +791,24 @@ footer{
   h1 {
     font-size: 30px;
     font-weight: bold;
-  }
+  }/*BOUTON*/
+  .btn__heart {
+    transform: translate(230px, 0px);
+    color: $color-primary;
   
+  &:hover{
+   color: transparent;
+ }
+  }
+ .btn__like{
+   font-size: xx-large;
+   color:$fondgrisclair;
+     
+   &:hover{
+     color: $color-primary;
+     animation:likin 0.4s ease 0s normal both ;
+   }
+ }         
   /*SECTION CALL TO ACTION*/
 
   .call-action {

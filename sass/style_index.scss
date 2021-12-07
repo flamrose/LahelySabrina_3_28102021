@@ -175,17 +175,16 @@ nav{
   transform: translate(250px, -40px);
   
   &:hover{
-   color: lighten($color-primary, $amount: 100);
+   color: transparent;
   }
 }
 .btn__like{
   font-size: xx-large;
   color: $color-primary;
-  opacity: 0;
+  scale: 0;
+  
   &:hover{
-    opacity: 1;
-    overflow: hidden;
-    animation:apparition 0.2s ease 0s normal both ;
+    animation:apparition 0.3s ease 0s normal both ;
   }
 }    
 
