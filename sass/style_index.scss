@@ -32,8 +32,6 @@ body{
   transition: .3s;
   box-shadow: 0px 0px $padding 0px rgba(0,0,0,0.6);    
 }
-
-
 /* VARIABLES */
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
@@ -41,7 +39,6 @@ $color-tertiary: #99E2D0;
 $white:white;
 $fondgrisclair:#F6F6F6;
 $padding:10px;
-
 /*CHARGEMENT LOADER*/
 //Spinner loading: sa position
 .spinner {
@@ -159,7 +156,7 @@ nav{
     animation-play-state: running;
   }
 }
- /*ANIMATION ZOOMER EN GRAND*/
+/*ANIMATION ZOOMER EN GRAND*/
  @keyframes zoombig {
   0%{
     transform: scale(1);
@@ -168,26 +165,50 @@ nav{
     transform: scale(1.2);
   }
 }
+/*BOUTON LIKE BY SCALE*/
 .btn__heart {
+  display: flex;
   font-size: xx-large;
   color: $color-primary;
   position: relative;
   transform: translate(250px, -40px);
   
   &:hover{
-   color: transparent;
+   color: $fondgrisclair;
   }
 }
 .btn__like{
+  display: flex;
   font-size: xx-large;
   color: $color-primary;
-  scale: 0;
+  opacity: 0.4;
+  cursor: pointer;
+  transform: translate(250px, -70px);
   
   &:hover{
-    animation:apparition 0.3s ease 0s normal both ;
+  color: $color-primary ;
+  opacity: 0.7;
+  animation:likin 1s ease 0s normal both ;  
   }
 }    
-
+/*ANIMATION APPARITION BY SCALE pour btn Like*/
+.likin {
+  animation-name:likin ;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-fill-mode: both;
+  }
+/* pour le btn LIKE*/
+@keyframes likin {
+  0%{
+  transform: scale(0.1);
+  }
+  100%{
+  transform: scale(1);
+  }
+  }
 /*ANIMATION SLIDE*/
 .animation{
 animation: slideleft 1s linear both;
@@ -202,8 +223,6 @@ animation: slideleft 1s linear both;
     opacity: 1;
   }
 }
-
-
 /*CALL TO ACTION*/
 .call-action{
   width: 100%;
@@ -407,7 +426,7 @@ footer {
   } 
   .btn__heart{
     font-size: xx-large;
-    transform: translate(350px, -40px);
+    transform: translate(250px, -40px);
   }
 }
 @media screen and (min-width:600px){
@@ -494,7 +513,7 @@ header{
     }
     .btn__heart{
       font-size: xx-large;
-      transform: translate(450px, -40px);
+      transform: translate(250px, -40px);
     }
 
     /*FOOTER*/
@@ -573,6 +592,9 @@ footer {
     .btn__heart{
       font-size: xx-large;
       transform: translate(170px, -20px);
+    }
+    .btn__like{
+      transform: translate(170px, -50px);
     }
     .card--3{
       margin-left: 130px;
@@ -747,6 +769,9 @@ footer{
     transform: translate(180px, -40px);
     color: $color-primary;
   }
+  .btn__like{
+    transform: translate(180px, -70px);
+  }
   /*FOOTER*/
   footer{
     display: flex;
@@ -845,6 +870,9 @@ footer{
     .btn__heart{
       transform: translate(200px, -30px);
       color: $color-primary;
+    }
+    .btn__like{
+      transform: translate(200px, -60px);
     }
      /*FOOTER*/
      footer{
@@ -961,6 +989,9 @@ footer{
         .btn__heart{
           transform: translate(230px, -40px);
           color: $color-primary;
+        }
+        .btn__like{
+          transform: translate(230px, -70px);
         }
         .btn__submit{
           margin-left: 35%;
@@ -1120,6 +1151,32 @@ header{
   .marg--right{
     margin-right: 100px;
   }
+ /*BOUTON LIKE BY SCALE*/
+.btn__heart {
+  display: flex;
+  font-size: xx-large;
+  color: $color-primary;
+  position: relative;
+  transform: translate(250px, -40px);
+  
+  &:hover{
+   color: $fondgrisclair;
+  }
+}
+.btn__like{
+  display: flex;
+  font-size: xx-large;
+  color: $color-primary;
+  opacity: 0.4;
+  cursor: pointer;
+  transform: translate(250px, -40px);
+  
+  &:hover{
+  color: $color-primary ;
+  opacity: 0.7;
+  animation:likin 1s ease 0s normal both ;  
+  }
+}     
 /*FOOTER*/
 footer{
   background-color: #353535;

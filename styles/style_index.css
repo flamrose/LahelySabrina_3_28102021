@@ -160,27 +160,51 @@ nav .nav__input {
     transform: scale(1.2);
   }
 }
+/*BOUTON LIKE BY SCALE*/
 .btn__heart {
+  display: flex;
   font-size: xx-large;
   color: #9356DC;
   position: relative;
   transform: translate(250px, -40px);
 }
 .btn__heart:hover {
-  color: white;
+  color: #F6F6F6;
 }
 
 .btn__like {
+  display: flex;
   font-size: xx-large;
   color: #9356DC;
-  opacity: 0;
+  opacity: 0.4;
+  cursor: pointer;
+  transform: translate(250px, -70px);
 }
 .btn__like:hover {
-  opacity: 1;
-  overflow: hidden;
-  animation: apparition 0.2s ease 0s normal both;
+  color: #9356DC;
+  opacity: 0.7;
+  animation: likin 1s ease 0s normal both;
 }
 
+/*ANIMATION APPARITION BY SCALE pour btn Like*/
+.likin {
+  animation-name: likin;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-fill-mode: both;
+}
+
+/* pour le btn LIKE*/
+@keyframes likin {
+  0% {
+    transform: scale(0.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 /*ANIMATION SLIDE*/
 .animation {
   animation: slideleft 1s linear both;
@@ -426,7 +450,7 @@ footer {
 
   .btn__heart {
     font-size: xx-large;
-    transform: translate(350px, -40px);
+    transform: translate(250px, -40px);
   }
 }
 @media screen and (min-width: 600px) {
@@ -519,7 +543,7 @@ footer {
 
   .btn__heart {
     font-size: xx-large;
-    transform: translate(450px, -40px);
+    transform: translate(250px, -40px);
   }
 
   /*FOOTER*/
@@ -607,6 +631,10 @@ footer {
   .btn__heart {
     font-size: xx-large;
     transform: translate(170px, -20px);
+  }
+
+  .btn__like {
+    transform: translate(170px, -50px);
   }
 
   .card--3 {
@@ -806,6 +834,10 @@ footer {
     color: #9356DC;
   }
 
+  .btn__like {
+    transform: translate(180px, -70px);
+  }
+
   /*FOOTER*/
   footer {
     display: flex;
@@ -917,6 +949,10 @@ footer {
   .btn__heart {
     transform: translate(200px, -30px);
     color: #9356DC;
+  }
+
+  .btn__like {
+    transform: translate(200px, -60px);
   }
 
   /*FOOTER*/
@@ -1045,6 +1081,10 @@ footer {
   .btn__heart {
     transform: translate(230px, -40px);
     color: #9356DC;
+  }
+
+  .btn__like {
+    transform: translate(230px, -70px);
   }
 
   .btn__submit {
@@ -1222,6 +1262,32 @@ footer {
 
   .marg--right {
     margin-right: 100px;
+  }
+
+  /*BOUTON LIKE BY SCALE*/
+  .btn__heart {
+    display: flex;
+    font-size: xx-large;
+    color: #9356DC;
+    position: relative;
+    transform: translate(250px, -40px);
+  }
+  .btn__heart:hover {
+    color: #F6F6F6;
+  }
+
+  .btn__like {
+    display: flex;
+    font-size: xx-large;
+    color: #9356DC;
+    opacity: 0.4;
+    cursor: pointer;
+    transform: translate(250px, -40px);
+  }
+  .btn__like:hover {
+    color: #9356DC;
+    opacity: 0.7;
+    animation: likin 1s ease 0s normal both;
   }
 
   /*FOOTER*/
