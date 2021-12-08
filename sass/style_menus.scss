@@ -2,6 +2,7 @@
   font-family: "Roboto", sans-serif, "Shrikhand", cursive;
   src: url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Shrikhand&display=swap");
 }
+/*MOBILE-FIRST : structure la + simple, qui comporte le - de règles*/
 
 /*BODY*/
 * {
@@ -13,6 +14,7 @@ body {
   margin: 0;
   display: block;
 }
+/*GENERALITES*/
 @mixin button-hover {
   opacity: 0.8;
   cursor: pointer;
@@ -28,7 +30,17 @@ $fondgrisclair:#F6F6F6;
 $padding:10px;
 
 /*ANIMATIONS*/
-/*ANIMATION APPARITION BY SCALE*//* pour btn Like*/
+
+/*ANIMATION APPARITION BY SCALE pour btn Like*/
+.likin {
+  animation-name:likin ;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-fill-mode: both;
+  }
+/* pour le btn LIKE*/
 @keyframes likin {
   0%{
   transform: scale(0.1);
@@ -36,15 +48,6 @@ $padding:10px;
   100%{
   transform: scale(1);
   }
-  }
-  /* pour le btn LIKE*/
-  .animation {
-  animation-name:likin ;
-  animation-duration: 0.4s;
-  animation-timing-function: ease;
-  animation-delay: 0s;
-  animation-direction: normal;
-  animation-fill-mode: both;
   }
 /*ANIMATION APPARITION BY SLIDE DOWN*/
 .slide-down {
@@ -61,20 +64,26 @@ $padding:10px;
     opacity: 1;
 }
 }
-/*ANIMATION SLIDE LEFT */
-/*pour menu__item ?*/
-@keyframes slide-left {
+/*ANIMATION BY SLIDE (LEFT) */
+.slide-check{
+  animation-name: slide-check;
+  animation-duration: .3s;
+  animation-delay: 0;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+/*pour la confirmation du menu*/
+@keyframes slide-check {
   0%{
-    transform: translateX(270px) translateY(-60px);
+    transform: translateX(310px) translateY(-70px);
   }
   100%{
-    transform: translateX(240px) translateY(-60px);
+    transform: translateX(245px) translateY(-70px);
   }
   0%{
-    transform: translateX(270px) translateY(-60px);
+    transform: translateX(310px) translateY(-70px);
   }
 }
-
 /*ANIMATION ZOOMER EN GRAND*/ /*btn-submit*/
 @keyframes zoombig {
   0%{
@@ -126,6 +135,7 @@ main{
 .header__menu{
   display: inline-flex;
   flex-wrap: nowrap;
+  white-space: nowrap;
   justify-content: space-evenly;
 
   &__titre{
@@ -134,29 +144,33 @@ main{
     font-weight: bold;
   }
 }
+/*BOUTON LIKE mobile-first*/
 .btn__heart {
   font-size: xx-large;
   color: $color-primary;
   position: relative;
-  transform: translate(48px, -1px);
+  transform: translate(30px, -1px);
     
   &:hover{
-    transition-property:transparent, 0.2s;
+    color: $fondgrisclair;
   }
 }
 .btn__like{
   font-size: xx-large;
-  color: $fondgrisclair;
+  color: $color-primary;
+  opacity: 0.4;
+  cursor: pointer;
   
   &:hover{
-    color: $color-primary;
-    animation:likin 0.4s ease 0s normal both ;
+    color: $color-primary ;
+    opacity: 0.7;
+    animation:likin 1s ease 0s normal both ;
   }
-}         
+}       
 /* SECTION MENUS */
-/*new */
-.sub-menu /*les Entrées*/
-.sub__menu__title{
+
+.sub-menu 
+.sub__menu__title{/*les Entrées, Plats, Desserts*/
     font-weight: normal;
     margin-right: 300px;
     margin-block-end: 0;
@@ -168,7 +182,7 @@ main{
     margin-left: 1px;
     padding-left: $padding;
   }
-  /*.menu__item__head*/
+/* sous-section de chaque section sub-menu. Apparition by slide-down*/
 .menu__item {
   width: 90%;
   height: fit-content;
@@ -199,6 +213,7 @@ main{
   text-overflow: ellipsis;
   overflow: hidden;
   }
+
   &__description{
   font-size: 16px;
   margin-block-start: 0;
@@ -209,6 +224,7 @@ main{
   overflow: hidden;
   overflow-x: hidden;
   }
+
   &__price{
   font-weight: bold;
   display: flex;
@@ -217,7 +233,7 @@ main{
   transform: translate(0px, -20px);
   &:hover{
     margin-right: 60px;
-    transition: margin-right 0.3s;
+    transition: margin-right 0.1s;
   }
   }
 
@@ -233,27 +249,12 @@ main{
   border-radius: 0 10px 10px 0;
   margin-left: 0px;
   }
-
   &:hover &__check{
     animation-name: slide-check;
     animation-duration: .3s;
     animation-delay: 0;
     animation-timing-function: ease-out;
     animation-fill-mode: both;
-  }
-}
-
-
-@keyframes slide-check {
-  0%{
-    transform: translateX(310px) translateY(-70px);
-  }
-  100%{
-
-    transform: translateX(245px) translateY(-70px);
-  }
-  0%{
-    transform: translateX(310px) translateY(-70px);
   }
 }
 .btn__check {
@@ -265,9 +266,7 @@ main{
   height: 20px;
   border-radius: 20px;
   transform: rotate(180deg);
-  
   margin: 20px 20px;
-
   &:hover{
     transform: rotate(0deg);
     transition-duration: .3s;
@@ -382,8 +381,16 @@ footer {
 .footer__icon {
   margin-right: 5px;
 }
-   
-            
+@media screen and (min-width: 400px){
+  .btn__heart{
+    transform: translate(40px, -1px);
+  }
+}    
+@media screen and (min-width: 450px){
+  .btn__heart{
+    transform: translate(50px, -1px);
+  }
+}   
 @media screen and (min-width: 500px) {
   body {
     margin: auto;
@@ -416,14 +423,18 @@ main{
   padding-left: 20px;
   padding-top: 20px;
 }
-  /*BOUTONS*/
-  .btn__heart {
-    font-size: xx-large;
-    color: $color-primary;
-    transform: translate(80px, -4px);
+/*BOUTON LIKE*/
+.btn__heart {
+  font-size: xx-large;
+  color: $color-primary;
+  position: relative;
+  transform: translate(70px, -3px);
+    
+  &:hover{
+    transition-property:color, 0.2s;
   }
-
-  /* SECTION MENU*/
+}   
+/* SECTION MENU*/
   .filters-section {
     padding: 0px;
   }
@@ -456,8 +467,23 @@ main{
   margin-left: 150px;
 }
 }
+@media screen and (min-width: 550px){
+  .btn__heart{
+    transform: translate(80px, -1px);
+  }
+}
+@media screen and (min-width: 600px){
+  .btn__heart{
+    transform: translate(95px, -1px);
+  }
+} 
+@media screen and (min-width: 650px){
+  .btn__heart{
+    transform: translate(105px, -1px);
+  }
+}      
 @media screen and (min-width: 700px){
-  /*HEADER PHOTO*/
+/*HEADER PHOTO*/
 
 .header__img{
   width: 100%;
@@ -468,7 +494,7 @@ main{
 .btn__heart {
   font-size: xx-large;
   color: $color-primary;
-  transform: translate(130px, -4px);
+  transform: translate(120px, -3px);
 }
 
 /*MAIN*/
@@ -585,7 +611,7 @@ footer{
   }
   /*BOUTONS*/
   .btn__heart {
-    transform: translate(143px, 0px);
+    transform: translate(130px, 0px);
     color: $color-primary;
   }
   
@@ -657,7 +683,7 @@ main{
   }
   /*BOUTONS*/
   .btn__heart {
-    transform: translate(160px, 0px);
+    transform: translate(140px, 0px);
     color: $color-primary;
   }
   .btn__submit{
@@ -713,6 +739,16 @@ main{
     margin-block-start: 0px;
   }
 }
+@media screen and (min-width: 1000px){
+  /*BOUTON LIKE*/
+.btn__heart {
+  font-size: xx-large;
+  color: $color-primary;
+  position: relative;
+  transform: translate(170px, -1px);
+}
+
+}
 @media screen and (min-width: 1100px){
   /*MAIN*/
 main{
@@ -741,7 +777,7 @@ main{
   }
   /*BOUTONS*/
   .btn__heart {
-    transform: translate(230px, 0px);
+    transform: translate(210px, 0px);
     color: $color-primary;
   }
   /* SECTION MENUS*/
@@ -802,18 +838,10 @@ footer{
     color: $color-primary;
   
   &:hover{
-   color: transparent;
+   transition:color 0.2s;
  }
   }
- .btn__like{
-   font-size: xx-large;
-   color:$fondgrisclair;
-     
-   &:hover{
-     color: $color-primary;
-     animation:likin 0.4s ease 0s normal both ;
-   }
- }         
+ 
   /*SECTION CALL TO ACTION*/
 
   .call-action {

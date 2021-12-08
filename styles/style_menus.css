@@ -3,6 +3,7 @@
   font-family: "Roboto", sans-serif, "Shrikhand", cursive;
   src: url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Shrikhand&display=swap");
 }
+/*MOBILE-FIRST : structure la + simple, qui comporte le - de règles*/
 /*BODY*/
 * {
   box-sizing: border-box;
@@ -14,10 +15,20 @@ body {
   display: block;
 }
 
+/*GENERALITES*/
 /* VARIABLES */
 /*ANIMATIONS*/
-/*ANIMATION APPARITION BY SCALE*/
-/* pour btn Like*/
+/*ANIMATION APPARITION BY SCALE pour btn Like*/
+.likin {
+  animation-name: likin;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-direction: normal;
+  animation-fill-mode: both;
+}
+
+/* pour le btn LIKE*/
 @keyframes likin {
   0% {
     transform: scale(0.1);
@@ -26,16 +37,6 @@ body {
     transform: scale(1);
   }
 }
-/* pour le btn LIKE*/
-.animation {
-  animation-name: likin;
-  animation-duration: 0.4s;
-  animation-timing-function: ease;
-  animation-delay: 0s;
-  animation-direction: normal;
-  animation-fill-mode: both;
-}
-
 /*ANIMATION APPARITION BY SLIDE DOWN*/
 .slide-down {
   animation: slide-down 0.5 cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -52,17 +53,25 @@ body {
     opacity: 1;
   }
 }
-/*ANIMATION SLIDE LEFT */
-/*pour menu__item ?*/
-@keyframes slide-left {
+/*ANIMATION BY SLIDE (LEFT) */
+.slide-check {
+  animation-name: slide-check;
+  animation-duration: 0.3s;
+  animation-delay: 0;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+}
+
+/*pour la confirmation du menu*/
+@keyframes slide-check {
   0% {
-    transform: translateX(270px) translateY(-60px);
+    transform: translateX(310px) translateY(-70px);
   }
   100% {
-    transform: translateX(240px) translateY(-60px);
+    transform: translateX(245px) translateY(-70px);
   }
   0% {
-    transform: translateX(270px) translateY(-60px);
+    transform: translateX(310px) translateY(-70px);
   }
 }
 /*ANIMATION ZOOMER EN GRAND*/
@@ -121,6 +130,7 @@ main {
 .header__menu {
   display: inline-flex;
   flex-wrap: nowrap;
+  white-space: nowrap;
   justify-content: space-evenly;
 }
 .header__menu__titre {
@@ -129,28 +139,32 @@ main {
   font-weight: bold;
 }
 
+/*BOUTON LIKE mobile-first*/
 .btn__heart {
   font-size: xx-large;
   color: #9356DC;
   position: relative;
-  transform: translate(48px, -1px);
+  transform: translate(30px, -1px);
 }
 .btn__heart:hover {
-  transition-property: transparent, 0.2s;
+  color: #F6F6F6;
 }
 
 .btn__like {
   font-size: xx-large;
-  color: #F6F6F6;
+  color: #9356DC;
+  opacity: 0.4;
+  cursor: pointer;
 }
 .btn__like:hover {
   color: #9356DC;
-  animation: likin 0.4s ease 0s normal both;
+  opacity: 0.7;
+  animation: likin 1s ease 0s normal both;
 }
 
 /* SECTION MENUS */
-/*new */
 .sub-menu .sub__menu__title {
+  /*les Entrées, Plats, Desserts*/
   font-weight: normal;
   margin-right: 300px;
   margin-block-end: 0;
@@ -164,7 +178,7 @@ main {
   padding-left: 10px;
 }
 
-/*.menu__item__head*/
+/* sous-section de chaque section sub-menu. Apparition by slide-down*/
 .menu__item {
   width: 90%;
   height: fit-content;
@@ -213,7 +227,7 @@ main {
 }
 .menu__item__price:hover {
   margin-right: 60px;
-  transition: margin-right 0.3s;
+  transition: margin-right 0.1s;
 }
 .menu__item__check {
   background-color: #99E2D0;
@@ -235,17 +249,6 @@ main {
   animation-fill-mode: both;
 }
 
-@keyframes slide-check {
-  0% {
-    transform: translateX(310px) translateY(-70px);
-  }
-  100% {
-    transform: translateX(245px) translateY(-70px);
-  }
-  0% {
-    transform: translateX(310px) translateY(-70px);
-  }
-}
 .btn__check {
   display: flex;
   justify-content: center;
@@ -392,6 +395,16 @@ footer {
   margin-right: 5px;
 }
 
+@media screen and (min-width: 400px) {
+  .btn__heart {
+    transform: translate(40px, -1px);
+  }
+}
+@media screen and (min-width: 450px) {
+  .btn__heart {
+    transform: translate(50px, -1px);
+  }
+}
 @media screen and (min-width: 500px) {
   body {
     margin: auto;
@@ -426,11 +439,15 @@ footer {
     padding-top: 20px;
   }
 
-  /*BOUTONS*/
+  /*BOUTON LIKE*/
   .btn__heart {
     font-size: xx-large;
     color: #9356DC;
-    transform: translate(80px, -4px);
+    position: relative;
+    transform: translate(70px, -3px);
+  }
+  .btn__heart:hover {
+    transition-property: color, 0.2s;
   }
 
   /* SECTION MENU*/
@@ -469,6 +486,21 @@ footer {
     margin-left: 150px;
   }
 }
+@media screen and (min-width: 550px) {
+  .btn__heart {
+    transform: translate(80px, -1px);
+  }
+}
+@media screen and (min-width: 600px) {
+  .btn__heart {
+    transform: translate(95px, -1px);
+  }
+}
+@media screen and (min-width: 650px) {
+  .btn__heart {
+    transform: translate(105px, -1px);
+  }
+}
 @media screen and (min-width: 700px) {
   /*HEADER PHOTO*/
   .header__img {
@@ -480,7 +512,7 @@ footer {
   .btn__heart {
     font-size: xx-large;
     color: #9356DC;
-    transform: translate(130px, -4px);
+    transform: translate(120px, -3px);
   }
 
   /*MAIN*/
@@ -608,7 +640,7 @@ footer {
 
   /*BOUTONS*/
   .btn__heart {
-    transform: translate(143px, 0px);
+    transform: translate(130px, 0px);
     color: #9356DC;
   }
 
@@ -684,7 +716,7 @@ footer {
 
   /*BOUTONS*/
   .btn__heart {
-    transform: translate(160px, 0px);
+    transform: translate(140px, 0px);
     color: #9356DC;
   }
 
@@ -747,6 +779,15 @@ footer {
     margin-block-start: 0px;
   }
 }
+@media screen and (min-width: 1000px) {
+  /*BOUTON LIKE*/
+  .btn__heart {
+    font-size: xx-large;
+    color: #9356DC;
+    position: relative;
+    transform: translate(170px, -1px);
+  }
+}
 @media screen and (min-width: 1100px) {
   /*MAIN*/
   main {
@@ -778,7 +819,7 @@ footer {
 
   /*BOUTONS*/
   .btn__heart {
-    transform: translate(230px, 0px);
+    transform: translate(210px, 0px);
     color: #9356DC;
   }
 
@@ -846,16 +887,7 @@ footer {
     color: #9356DC;
   }
   .btn__heart:hover {
-    color: transparent;
-  }
-
-  .btn__like {
-    font-size: xx-large;
-    color: #F6F6F6;
-  }
-  .btn__like:hover {
-    color: #9356DC;
-    animation: likin 0.4s ease 0s normal both;
+    transition: color 0.2s;
   }
 
   /*SECTION CALL TO ACTION*/
