@@ -181,7 +181,8 @@ main {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 .menu__item__title {
   font-weight: bold;
@@ -211,7 +212,8 @@ main {
   transform: translate(0px, -20px);
 }
 .menu__item__price:hover {
-  margin-right: 30px;
+  margin-right: 60px;
+  transition: margin-right 0.3s;
 }
 .menu__item__check {
   background-color: #99E2D0;
@@ -219,7 +221,11 @@ main {
   justify-content: center;
   align-items: center;
   position: absolute;
-  transform: translate(270px, -60px);
+  transform: translate(310px, -70px);
+  border: solid 2px #99E2D0;
+  border-bottom: solid 4px #99E2D0;
+  border-radius: 0 10px 10px 0;
+  margin-left: 0px;
 }
 .menu__item:hover .menu__item__check {
   animation-name: slide-check;
@@ -231,13 +237,13 @@ main {
 
 @keyframes slide-check {
   0% {
-    transform: translateX(270px) translateY(-60px);
+    transform: translateX(310px) translateY(-70px);
   }
   100% {
-    transform: translateX(240px) translateY(-60px);
+    transform: translateX(245px) translateY(-70px);
   }
   0% {
-    transform: translateX(270px) translateY(-60px);
+    transform: translateX(310px) translateY(-70px);
   }
 }
 .btn__check {
@@ -249,11 +255,11 @@ main {
   height: 20px;
   border-radius: 20px;
   transform: rotate(180deg);
-  transition-duration: 0.1s;
-  margin: 20px 10px;
+  margin: 20px 20px;
 }
 .btn__check:hover {
-  transform: rotate(0);
+  transform: rotate(0deg);
+  transition-duration: 0.3s;
 }
 
 .icon__check {
