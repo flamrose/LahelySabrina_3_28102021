@@ -3,6 +3,91 @@
   font-family: "Roboto", sans-serif, "Shrikhand", cursive;
   src: url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Shrikhand&display=swap");
 }
+/**, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+
+  display: block;
+}
+
+/*GENERALITE*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: block;
+  margin: 0;
+}
+
+/* Mixins */
+/* VARIABLES */
+/*ANIMATIONS*/
+/*ANIMATION APPARITION BY SCALE*/
+@keyframes apparition {
+  0% {
+    transform: scale(0.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.apparition {
+  animation-name: apparition;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+  animation-delay: 0;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+/*ANIMATION ZOOMER EN GRAND*/
+.zoombig {
+  opacity: 0.8;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
+  animation-name: zoombig;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+@keyframes zoombig {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+/*ANIMATION ZOOMER*/
+@keyframes zoomer {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+.zoomer {
+  animation-name: zoomer;
+  animation-duration: 0.4s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+/*animation: slide-left 2s  cubic-bezier(0.250, 0.460, 0.450, 0.940)  backwards;*/
 /*MOBILE-FIRST : structure la + simple, qui comporte le - de règles*/
 /*BODY*/
 * {
@@ -65,13 +150,16 @@ body {
 /*pour la confirmation du menu*/
 @keyframes slide-check {
   0% {
-    transform: translateX(310px) translateY(-70px);
+    transform: translateX(310px) translateY(0px);
+    opacity: 0;
   }
   100% {
     transform: translateX(245px) translateY(-70px);
+    opacity: 1;
   }
   0% {
     transform: translateX(310px) translateY(-70px);
+    opacity: 0;
   }
 }
 /*ANIMATION ZOOMER EN GRAND*/
@@ -157,7 +245,6 @@ main {
   cursor: pointer;
 }
 .btn__like:hover {
-  color: #9356DC;
   opacity: 0.7;
   animation: likin 1s ease 0s normal both;
 }
@@ -195,8 +282,6 @@ main {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
 }
 .menu__item__title {
   font-weight: bold;
@@ -213,10 +298,11 @@ main {
   margin-block-start: 0;
   margin-block-end: 0;
   padding-top: 0px;
+}
+.menu__item__description:hover {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  overflow-x: hidden;
 }
 .menu__item__price {
   font-weight: bold;
@@ -224,6 +310,7 @@ main {
   flex-direction: row;
   justify-content: flex-end;
   transform: translate(0px, -20px);
+  margin-left: 20px;
 }
 .menu__item__price:hover {
   margin-right: 60px;
@@ -258,7 +345,7 @@ main {
   height: 20px;
   border-radius: 20px;
   transform: rotate(180deg);
-  margin: 20px 20px;
+  margin: 22px 20px;
 }
 .btn__check:hover {
   transform: rotate(0deg);
@@ -300,31 +387,6 @@ main {
   animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   animation-delay: 0;
   animation-fill-mode: both;
-}
-
-/* A supp*/
-.delay-5 {
-  animation-delay: 0.5s;
-}
-
-.delay-6 {
-  animation-delay: 0.6s;
-}
-
-.delay-7 {
-  animation-delay: 0.7s;
-}
-
-.delay-8 {
-  animation-delay: 0.8s;
-}
-
-.delay-9 {
-  animation-delay: 0.9s;
-}
-
-.delay-10 {
-  animation-delay: 10s;
 }
 
 /*CALL TO ACTION*/
@@ -819,7 +881,7 @@ footer {
 
   /*BOUTONS*/
   .btn__heart {
-    transform: translate(230px, 0px);
+    transform: translate(210px, 0px);
     color: #9356DC;
   }
 
@@ -888,6 +950,100 @@ footer {
   }
   .btn__heart:hover {
     transition: color 0.2s;
+  }
+
+  /* sous-section de chaque section sub-menu. Apparition by slide-down*/
+  .menu__item {
+    width: 90%;
+    height: fit-content;
+    align-items: center;
+    background-color: white;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    box-shadow: 4px 4px 8px #e5e5e5;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  .menu__item__head {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .menu__item__title {
+    font-weight: bold;
+    font-size: 20px;
+    margin-block-end: 0;
+    margin-block-start: 0;
+    padding-top: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .menu__item__description {
+    font-size: 16px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-top: 0px;
+  }
+  .menu__item__description:hover {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .menu__item__price {
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    transform: translate(0px, -20px);
+    margin-left: 30px;
+  }
+  .menu__item__price:hover {
+    margin-right: 80px;
+    transition: margin-right 0.1s;
+  }
+  .menu__item__check {
+    background-color: #99E2D0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    transform: translate(310px, -70px);
+    border: solid 2px #99E2D0;
+    border-bottom: solid 4px #99E2D0;
+    border-radius: 0 10px 10px 0;
+    margin-left: 0px;
+  }
+  .menu__item:hover .menu__item__check {
+    animation-name: slide-check;
+    animation-duration: 0.3s;
+    animation-delay: 0;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+    transform: rotate(0deg);
+  }
+
+  .btn__check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    transform: rotate(180deg);
+    margin: 22px 20px;
+  }
+  .btn__check:hover {
+    transform: rotate(0deg);
+    transition-duration: 0.3s;
+  }
+
+  .icon__check {
+    color: #99E2D0;
   }
 
   /*SECTION CALL TO ACTION*/

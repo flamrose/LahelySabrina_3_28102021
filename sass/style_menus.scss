@@ -2,6 +2,8 @@
   font-family: "Roboto", sans-serif, "Shrikhand", cursive;
   src: url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Shrikhand&display=swap");
 }
+@import "style__animations.scss";
+
 /*MOBILE-FIRST : structure la + simple, qui comporte le - de règles*/
 
 /*BODY*/
@@ -75,13 +77,16 @@ $padding:10px;
 /*pour la confirmation du menu*/
 @keyframes slide-check {
   0%{
-    transform: translateX(310px) translateY(-70px);
+    transform: translateX(310px) translateY(0px);
+    opacity: 0;
   }
   100%{
     transform: translateX(245px) translateY(-70px);
+    opacity: 1;
   }
   0%{
     transform: translateX(310px) translateY(-70px);
+    opacity: 0;
   }
 }
 /*ANIMATION ZOOMER EN GRAND*/ /*btn-submit*/
@@ -162,7 +167,6 @@ main{
   cursor: pointer;
   
   &:hover{
-    color: $color-primary ;
     opacity: 0.7;
     animation:likin 1s ease 0s normal both ;
   }
@@ -199,8 +203,6 @@ main{
    white-space: nowrap;
    text-overflow: ellipsis;
    overflow: hidden;
-   display: flex;
-   flex-direction: column;
   }
 
   &__title {
@@ -219,10 +221,11 @@ main{
   margin-block-start: 0;
   margin-block-end: 0;
   padding-top: 0px;
+  &:hover{
   white-space: nowrap; 
   text-overflow: ellipsis;
   overflow: hidden;
-  overflow-x: hidden;
+  }
   }
 
   &__price{
@@ -231,6 +234,7 @@ main{
   flex-direction: row;
   justify-content: flex-end;
   transform: translate(0px, -20px);
+  margin-left: 20px;
   &:hover{
     margin-right: 60px;
     transition: margin-right 0.1s;
@@ -266,7 +270,7 @@ main{
   height: 20px;
   border-radius: 20px;
   transform: rotate(180deg);
-  margin: 20px 20px;
+  margin: 22px 20px;
   &:hover{
     transform: rotate(0deg);
     transition-duration: .3s;
@@ -303,25 +307,6 @@ main{
   animation-timing-function:cubic-bezier(0.250, 0.460, 0.450, 0.940) ;
   animation-delay: 0;
   animation-fill-mode: both; 
-}
-/* A supp*/
-.delay-5{
-  animation-delay: 0.5s;
-}
-.delay-6{
-  animation-delay: 0.6s;
-}
-.delay-7{
-  animation-delay: 0.7s;
-}
-.delay-8{
-  animation-delay: 0.8s;
-}
-.delay-9{
-  animation-delay: 0.9s;
-}
-.delay-10{
-  animation-delay: 10s;
 }
 /*CALL TO ACTION*/
 .call-action {
@@ -777,7 +762,7 @@ main{
   }
   /*BOUTONS*/
   .btn__heart {
-    transform: translate(230px, 0px);
+    transform: translate(210px, 0px);
     color: $color-primary;
   }
   /* SECTION MENUS*/
@@ -841,6 +826,103 @@ footer{
    transition:color 0.2s;
  }
   }
+  /* sous-section de chaque section sub-menu. Apparition by slide-down*/
+.menu__item {
+  width: 90%;
+  height: fit-content;
+  align-items: center;
+  background-color:$white;
+  padding: 0 $padding;
+  margin-bottom: 20px;
+  box-shadow: 4px 4px 8px #e5e5e5;
+  border-radius: $padding;
+  cursor: pointer;
+  margin-right: 20px;
+    
+  &__head{
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+  }
+
+  &__title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-block-end: 0;
+  margin-block-start: 0;
+  padding-top: $padding; 
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  }
+
+  &__description{
+  font-size: 16px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-top: 0px;
+  &:hover{
+  white-space: nowrap; 
+  text-overflow: ellipsis;
+  overflow: hidden;
+  
+  }
+  }
+
+  &__price{
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  transform: translate(0px, -20px);
+  margin-left: 30px;
+  &:hover{
+    margin-right: 80px;
+    transition: margin-right 0.1s;
+  }
+  }
+
+  &__check{
+  background-color: $color-tertiary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  transform: translate(310px, -70px);
+  border: solid 2px $color-tertiary;
+  border-bottom:solid 4px $color-tertiary;
+  border-radius: 0 10px 10px 0;
+  margin-left: 0px;
+  }
+  &:hover &__check{
+    animation-name: slide-check;
+    animation-duration: .3s;
+    animation-delay: 0;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+    transform: rotate(0deg);
+  }
+}
+.btn__check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  transform: rotate(180deg);
+  margin: 22px 20px;
+  &:hover{
+    transform: rotate(0deg);
+    transition-duration: .3s;
+}
+}
+.icon__check{
+  color: $color-tertiary;
+}
  
   /*SECTION CALL TO ACTION*/
 

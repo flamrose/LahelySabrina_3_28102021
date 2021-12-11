@@ -178,7 +178,8 @@ nav .nav__input {
   color: #9356DC;
   opacity: 0.4;
   cursor: pointer;
-  transform: translate(250px, -70px);
+  margin-top: -70px;
+  margin-left: 250px;
 }
 .btn__like:hover {
   color: #9356DC;

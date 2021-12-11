@@ -183,7 +183,9 @@ nav{
   color: $color-primary;
   opacity: 0.4;
   cursor: pointer;
-  transform: translate(250px, -70px);
+  margin-top: -70px;
+  margin-left: 250px;
+  
   
   &:hover{
   color: $color-primary ;
