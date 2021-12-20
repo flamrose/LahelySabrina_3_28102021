@@ -2,7 +2,7 @@
     &--withBackArrow {
       position: relative;
     }
-  
+   /*flèche retour*/
     &__arrow {
       position: absolute;
       left: 2rem;
@@ -17,14 +17,14 @@
       color: black;
     }
   }
-  
+ /*Bannière photo*/ 
   .heroImg {
     max-width: 100%;
     max-height: 32rem;
     width: 100%;
     object-fit: cover;
   }
-  
+/*MAIN DES MENU*/  
   .menu {
     margin-top: -4rem;
     border-radius: 2rem 2rem 0 0;
@@ -84,7 +84,7 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      mix-blend-mode: lighten;
+      mix-blend-mode: lighten;/*comment un élément peut se fondre avec son parent direct*/
     }
   
     &__btn:hover {

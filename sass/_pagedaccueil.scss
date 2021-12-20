@@ -1,9 +1,9 @@
-  /* Mixins */
-  @mixin button-hover {
-  opacity: 0.8;
-  cursor: pointer;
-  transition: .3s;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.6);    
+  /* MIXINS */
+@mixin button-hover {
+opacity: 0.8;
+cursor: pointer;
+transition: .3s;
+box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.6);    
 }
 
 
@@ -55,7 +55,7 @@ $color-tertiary: #99E2D0;
   }
 }
 
-
+/*Navigation de recherche géographique*/
   .local {
     display: flex;
     justify-content: center;
@@ -72,7 +72,7 @@ $color-tertiary: #99E2D0;
       font-weight: 700;
     }
   }
-  
+/*Navigation de découverte*/  
   .hero {
     padding: 2rem;
     text-align: center;
@@ -91,7 +91,7 @@ $color-tertiary: #99E2D0;
       @include button(primary);
     }
   }
-  
+ /* FONCTIONNEMENT*/ 
   .tuto {
     padding: ( $appPadding + 1rem ) $appPadding;
   
@@ -103,7 +103,7 @@ $color-tertiary: #99E2D0;
       margin: 0;
       padding: 0;
       list-style: none;
-      counter-reset: compteListe;
+      counter-reset: compteListe;/*numérotation*/
   
       @media (min-width:64rem) {
         display: flex;
@@ -163,7 +163,7 @@ $color-tertiary: #99E2D0;
       color: #7e7e7e;
     }
   }
-  
+ /*Section cartes des restaurants*/ 
   .restaurants {
     background-color: #f6f6f6;
     padding: ($appPadding + 1rem) $appPadding;

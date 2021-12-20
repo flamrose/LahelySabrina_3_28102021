@@ -1,9 +1,9 @@
-@use "sass:color";
+@use "sass:color";/*sass doit utiliser les couleurs*/
 
 body, html {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth;/*ajoute un effet de défilement fluide*/
 }
 
 @mixin button($type) {
@@ -29,18 +29,18 @@ body, html {
     color: inherit;
   }
 }
-
+/*Variables*/
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
 $appPadding: 1rem;
-
+/*GENERALITE : div, section, main*/
 .container {
   max-width: 1280px;
   margin: auto;
   position: relative;
 }
-
+/*HEADER ET SON LOGO*/
 .header {
   padding: 1rem $appPadding;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
@@ -53,7 +53,7 @@ $appPadding: 1rem;
     text-align: center;
   }
 }
-
+/*FOOTER ET SES ELEMENTS*/
 .footer {
   background-color: #353535;
   
