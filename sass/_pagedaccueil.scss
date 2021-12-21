@@ -1,4 +1,5 @@
   /* MIXINS */
+/*utilise plusieurs propriétés*/  
 @mixin button-hover {
 opacity: 0.8;
 cursor: pointer;
@@ -15,7 +16,7 @@ box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.6);
 
 
   /* VARIABLES */
-$color-primary: #9356DC;
+$color-primary: #9356DC;/*1 propriété seulement*/
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
 
@@ -29,10 +30,10 @@ $color-tertiary: #99E2D0;
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 20;
-  animation: spinner 2s linear ;
-  visibility: hidden;
+  animation: spinner 2s linear ;/*progressif*/
+  visibility: hidden;/*garde sa hauteur mais disparait*/
   &__border {
-      @include flexbox-center;
+      @include flexbox-center;/*inclure le mixin*/
       border: $padding solid transparent;
       border-top: $padding solid $color-primary;
       border-bottom: $padding solid $color-secondary;
@@ -55,7 +56,7 @@ $color-tertiary: #99E2D0;
   }
 }
 
-/*Navigation de recherche géographique*/
+/*Localisation géographique*/
   .local {
     display: flex;
     justify-content: center;
@@ -91,7 +92,7 @@ $color-tertiary: #99E2D0;
       @include button(primary);
     }
   }
- /* FONCTIONNEMENT*/ 
+ /* TITRE ET FONCTIONNEMENT*/ 
   .tuto {
     padding: ( $appPadding + 1rem ) $appPadding;
   
@@ -102,7 +103,7 @@ $color-tertiary: #99E2D0;
     &__steps {
       margin: 0;
       padding: 0;
-      list-style: none;
+      list-style: none;/*enlève les puces*/
       counter-reset: compteListe;/*numérotation*/
   
       @media (min-width:64rem) {
@@ -121,7 +122,7 @@ $color-tertiary: #99E2D0;
       // ajout du hover sur les boutons
       &:hover {
         @include button-hover;
-        background: lighten(#f7f7f7, 3%);
+        background: lighten(#f7f7f7, 3%);/*légèreté en %. 0% est sombre*/
     }
   
       @media (min-width:64rem) {
@@ -141,10 +142,10 @@ $color-tertiary: #99E2D0;
       &:last-child {
         margin-bottom: 0;
       }
-  
+  /*pseudo élément avant*/
       &::before {
         counter-increment: compteListe 1;
-        content: counter(compteListe) " ";
+        content: counter(compteListe) " ";/*obligation de mettre du contenu, même vide*/
         background: $color-primary;
         height: 1.5rem;
         width: 1.5rem;
@@ -153,7 +154,7 @@ $color-tertiary: #99E2D0;
         justify-content: center;
         align-items: center;
         color: white;
-        position: absolute;
+        position: absolute;/*par rapp à son parent*/
         left: -0.75rem;
       }
     }
@@ -210,7 +211,7 @@ $color-tertiary: #99E2D0;
   
     &__footer {
       padding: 1rem;
-      position: relative;
+      position: relative;/*comme la photo*/
       display: flex;
       align-items: center;
     }
@@ -221,7 +222,7 @@ $color-tertiary: #99E2D0;
   
     &__title {
       margin: 0;
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.25rem;/*4 px*/
     }
   
     &__subtitle {
@@ -237,10 +238,11 @@ $color-tertiary: #99E2D0;
       display:flex;
       align-items:center;
       justify-content:center;
+      z-index: 100;/*pour que le clic sur le coeur ne renvoie pas au menu*/
     }
   
     &__like {
-      background-color: white!important;
+      background-color: white!important;/*propriété qui remplace les règles précédentes*/
     }
     &__like {
       transition-duration: .25s;
@@ -253,7 +255,8 @@ $color-tertiary: #99E2D0;
       display:flex;
       align-items:center;
       justify-content:center;
-      mix-blend-mode: lighten;
+      mix-blend-mode: lighten;/*comment un élément peut se fondre avec son parent direct*/
+      z-index: 100;
   
   }
 }

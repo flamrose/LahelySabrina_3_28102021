@@ -208,9 +208,9 @@
     }
   }
   
-  @for $i from 0 to 9 {
+  @for $i from 0 to 9 {/* @=indique 1 fonction. Pour  i allant de 0 à 9, le delai est de 1s */
     .delay-#{$i} {
-      animation-delay:  #{$i}s/4;
+      animation-delay:  #{$i}s/2;/*diminuer pour réduire le temps*/
     }
   }
   
@@ -222,7 +222,7 @@
   }
   
   .commandBtn {
-    @include button(primary);
+    @include button(primary);/*inclure le mixin*/
     cursor: pointer;
   }
 
