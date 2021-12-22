@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/7d17636476.js" crossorigin="anonymous"></script><!--bibliothèque en ligne-->
+  <script src="https://kit.fontawesome.com/7d17636476.js" crossorigin="anonymous"></script>
+  <!--bibliothèque en ligne-->
   <link rel="stylesheet" href="styles/style_index.css">
 
 
@@ -12,7 +13,7 @@
   <meta name="title" content="Accueil - ohmyfood!">
   <meta name="description"
     content="Ohmyfood! est une entreprise de commande de repas en ligne. Notre concept permet aux utilisateurs de composer leur propre menu et réduire leur temps d’attente dans les restaurants.">
-<!--permet de présenter le site-->
+  <!--permet de présenter le site-->
 
 </head>
 
@@ -52,7 +53,8 @@
     <section class="tuto">
       <div class="container">
         <h2 class="tuto__title">Fonctionnement</h2>
-        <ol class="tuto__steps"> <!--liste ordonnée-->
+        <ol class="tuto__steps">
+          <!--liste ordonnée-->
           <li class="tuto__step">
             <i class="tuto__icon fas fa-mobile-alt"></i>
             <span class="text">Choisissez un restaurant</span>
@@ -74,25 +76,31 @@
       <div class="container">
         <h2 class="restaurants__title">Restaurants</h2>
 
-        <div class="cards"> <!--1 div compposée de 4 liens-->
-          <a class="card" href="pages_menus/la-palette-du-gout.html">
-            <img src="src/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="" class="card__img">
-            <span class="card__badge">Nouveau</span> <!-- <span class="card__badge">Nouveau</span> -->
+        <div class="cards">
+          <!--1 div compposée de 4 DIV avec chacune son lien-->
+          <div>
+            <a class="card" href="pages_menus/la-palette-du-gout.html">
+              <img src="src/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La palette du goût"
+                class="card__img">
+              <span class="card__badge">Nouveau</span> <!-- <span class="card__badge">Nouveau</span> -->
+            </a>
             <footer class="card__footer">
               <div class="card__content">
                 <h3 class="card__title">La palette du goût</h3>
                 <span class="card__subtitle">Ménilmontant</span>
               </div>
               <div class="menu__btn card__btn">
-                <i class="card__like menu__like menu__like--noBg far fa-heart fa-2x"></i>
+                <i class="card__like menu__like menu__like--noBg far fa-heart fa-2x "></i>
                 <i class="card__like menu__like menu__like--bg fas fa-heart fa-2x"></i>
               </div>
             </footer>
-          </a>
+          </div>
 
-          <a class="card" href="pages_menus/la-note-enchantee.html">
-            <img src="src/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="" class="card__img">
-            <span class="card__badge">Nouveau</span> <!-- <span class="card__badge">Nouveau</span> -->
+          <div>
+            <a class="card" href="pages_menus/la-note-enchantee.html">
+              <img src="src/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="La note enchantée" class="card__img">
+              <span class="card__badge">Nouveau</span> <!-- <span class="card__badge">Nouveau</span> -->
+            </a>
             <footer class="card__footer">
               <div class="card__content">
                 <h3 class="card__title">La note enchantée</h3>
@@ -103,10 +111,13 @@
                 <i class="card__like menu__like menu__like--bg fas fa-heart fa-2x"></i>
               </div>
             </footer>
-          </a>
+          </div>
 
-          <a class="card" href="pages_menus/a-la-francaise.html">
-            <img src="src/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="" class="card__img">
+          <div>
+            <a class="card" href="pages_menus/a-la-francaise.html">
+              <img src="src/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="A la française"
+                class="card__img">
+            </a>
             <footer class="card__footer">
               <div class="card__content">
                 <h3 class="card__title">À la française</h3>
@@ -117,11 +128,12 @@
                 <i class="card__like menu__like menu__like--bg fas fa-heart fa-2x"></i>
               </div>
             </footer>
-          </a>
-
-          <a class="card" href="pages_menus/le-delice-des-sens.html">
-            <img src="src/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt=""
-              class="card__img">
+          </div>
+          <div>
+            <a class="card" href="pages_menus/le-delice-des-sens.html">
+              <img src="src/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
+                alt="Le délice des sens" class="card__img">
+            </a>
             <footer class="card__footer">
               <div class="card__content">
                 <h3 class="card__title">Le délice des sens</h3>
@@ -132,13 +144,14 @@
                 <i class="card__like menu__like menu__like--bg fas fa-heart fa-2x"></i>
               </div>
             </footer>
-          </a>
+          </div>
+
         </div>
       </div>
     </section>
   </main>
 
-  <!--Footer --> 
+  <!--Footer -->
   <footer class="footer">
     <div class="container">
       <span class="footer__logo">ohmyfood</span>
@@ -153,7 +166,8 @@
           <a class="footer__link" href="#">Mentions légales</a>
         </li>
         <li class="footer__listElt">
-          <a class="footer__link" href="mailto:contact@ohmyfood.com">Contact</a> <!--lien pour e-mail-->
+          <a class="footer__link" href="mailto:contact@ohmyfood.com">Contact</a>
+          <!--lien pour e-mail-->
         </li>
       </ul>
     </div>
