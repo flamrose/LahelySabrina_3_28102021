@@ -405,11 +405,11 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 100;
+  z-index: 10;
 }
 .card__like {
   background-color: white !important;
-  z-index: 100;
+  z-index: 10;
 }
 .card__like {
   transition-duration: 0.25s;
@@ -423,7 +423,7 @@ body, html {
   align-items: center;
   justify-content: center;
   mix-blend-mode: lighten;
-  z-index: 100;
+  z-index: 10;
 }
 
 .header--withBackArrow {
@@ -478,11 +478,11 @@ body, html {
   cursor: pointer;
   position: relative;
   background-color: black;
-  z-index: 100;
+  z-index: 10;
 }
 .menu__btn:hover::before {
   opacity: 1;
-  z-index: 100;
+  z-index: 10;
 }
 .menu__btn::before {
   opacity: 0;
@@ -494,7 +494,7 @@ body, html {
   height: 100%;
   width: 100%;
   background: linear-gradient(0deg, #9356DC 0%, #FF79DA 100%);
-  z-index: 100;
+  z-index: 10;
 }
 .menu__like {
   transition-duration: 0.25s;
@@ -508,11 +508,11 @@ body, html {
   align-items: center;
   justify-content: center;
   mix-blend-mode: lighten;
-  z-index: 100;
+  z-index: 10;
 }
 .menu__btn:hover .menu__like--noBg {
   opacity: 0;
-  z-index: 100;
+  z-index: 10;
 }
 
 .submenus {
